@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Container({ children }) {
+export default function Container({ children }) { // nested component
   return (
     <div className="container-wrapper">
       <h1 className="title-container">Biodata</h1>
