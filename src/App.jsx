@@ -19,9 +19,6 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
         <Routes>
-          {/* AUTH ROUTES TANPA PREFIX /auth
-            Sekarang path-nya langsung /login, /register, dll.
-          */}
           <Route element={<AuthLayout />}>
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
