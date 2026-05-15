@@ -1,10 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FCA311;
-  --color-primary-dark: #D98C0D;
-  --color-navy: #14213D;
-  --color-navy-dark: #0F182E;
-  --color-surface: #E5E5E5;
-  --color-surface-dark: #C9C9C9;
+  /* Warna Neon Lime Utama (Background & Active State) */
+  --color-primary: #D4E34A;
+  --color-primary-dark: #C5D33A;
+  
+  /* Warna Olive (Aksen teks link, tombol sekunder, & diagram) */
+  --color-olive: #A8B330;
+  --color-olive-dark: #8F9928;
+
+  /* Warna Hitam & Abu-abu untuk Teks/Sidebar */
+  --color-navy: #1A1C1E;
+  --color-navy-dark: #000000;
+  
+  /* Background Surface & Input Fields */
+  --color-surface: #F8F9FA;
+  --color-surface-dark: #F3F4F6;
+  
+  /* Status Warna (Received/Shipping) */
+  --color-success: #48C58C;
+  --color-warning: #F9C344;
 }

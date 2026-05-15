@@ -2,35 +2,29 @@ import { Outlet } from 'react-router-dom';
 
 export default function AuthLayout() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#FCA311] p-6 font-sans">
-      <div className="w-full max-w-md">
+    /* Background Full Satu Layar Neon Lime */
+    <div className="flex min-h-screen w-full items-center justify-center bg-[#D4E34A] p-6 font-sans">
+      
+      <div className="w-full max-w-md flex flex-col items-center">
         
-        {/* Logo Section - Sekarang Sama dengan Sidebar */}
-        <div className="flex flex-col items-center mb-8 group cursor-pointer">
-          <div className="relative flex items-center justify-center mb-4">
-            {/* Hexagon Baut - Navy #14213D agar kontras dengan BG Orange */}
-            <div className="w-16 h-16 bg-[#14213D] rounded-2xl rotate-45 flex items-center justify-center shadow-xl group-hover:rotate-[135deg] transition-all duration-700">
-              {/* Lubang Tengah Baut */}
-              <div className="w-6 h-6 bg-[#FCA311] rounded-full"></div>
-            </div>
-            
-            {/* Aksen Kunci Pas */}
-            <div className="absolute -right-2 -bottom-1 bg-white text-xs w-8 h-8 rounded-xl flex items-center justify-center border-2 border-[#14213D] shadow-md">
-              <span className="text-[16px]">🛠️</span>
-            </div>
+        {/* Logo Section - 3 Kapsul Hitam Miring */}
+        <div className="flex flex-col items-center mb-10">
+          <div className="flex gap-2.5 mb-4">
+            {/* Kapsul miring sesuai logo LoremIpsum */}
+            <div className="w-5 h-14 bg-black rounded-full transform -rotate-[20deg]"></div>
+            <div className="w-5 h-14 bg-black rounded-full transform -rotate-[20deg]"></div>
+            <div className="w-5 h-14 bg-black rounded-full transform -rotate-[20deg]"></div>
           </div>
 
-          {/* Teks Logo */}
-          <h1 className="text-3xl font-black text-[#14213D] tracking-tighter">
-            FIX<span className="text-white">FLOW</span>
+          {/* Teks Logo Hitam Solid */}
+          <h1 className="text-3xl font-black text-black tracking-tight">
+            FixFlow
           </h1>
-          <p className="text-[10px] font-bold text-[#14213D]/60 uppercase tracking-[0.3em] -mt-1">
-            Auto Service Workshop
-          </p>
         </div>
         
-        {/* Card Putih untuk Form Login/Register */}
-        <div className="rounded-[2.5rem] bg-white p-10 shadow-2xl">
+        {/* Card Putih Bersih di Tengah */}
+        {/* Pakai rounded-[3.5rem] biar lengkungan pojoknya dapet banget */}
+        <div className="w-full bg-white rounded-[3.5rem] p-10 md:p-12 shadow-2xl shadow-black/5">
           <Outlet />
         </div>
 
