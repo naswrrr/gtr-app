@@ -9,10 +9,16 @@ import NotFound from './components/NotFound';
 
 // Lazy Loaded Pages
 const Home = lazy(() => import('./pages/Home'));
-const Customers = lazy(() => import('./pages/Customers')); 
+const Customers = lazy(() => import('./pages/Customers'));
+const Inventory = lazy(() => import('./pages/Inventory'));
+const RepairTracker = lazy(() => import('./pages/RepairTracker'));
+const Bookings = lazy(() => import('./pages/Bookings'));
+const Staff = lazy(() => import('./pages/Staff'));
+const Components = lazy(() => import('./pages/Components'));
 const Login = lazy(() => import('./pages/auth/Login'));
 const Register = lazy(() => import('./pages/auth/Register'));
 const Forgot = lazy(() => import('./pages/auth/Forgot'));
+
 
 function App() {
   return (
@@ -28,7 +34,12 @@ function App() {
           {/* MAIN LAYOUT ROUTES */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path="inventory" element={<Inventory />} />
+            <Route path="repair" element={<RepairTracker />} />
             <Route path="customers" element={<Customers />} />
+            <Route path="bookings" element={<Bookings />} />
+            <Route path="staff" element={<Staff />} />
+            <Route path="components" element={<Components />} />
             {/* Redirect jika user nyasar ke path lama */}
             <Route path="appointments" element={<Navigate to="/customers" replace />} />
           </Route>

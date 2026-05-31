@@ -9,7 +9,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [dataForm, setDataForm] = useState({
-    username: "", // Sesuai kebutuhan API DummyJSON
+    username: "", 
     password: "",
   });
 
@@ -26,6 +26,31 @@ export default function Login() {
     setLoading(true);
     setError("");
 
+    // --- LOGIKA TAMBAHAN: CEK USER DARI REGISTER (LOCALSTORAGE) ---
+    const savedUser = JSON.parse(localStorage.getItem("registeredUser"));
+
+    // Jika username & password cocok dengan yang ada di localStorage
+    if (savedUser && dataForm.username === savedUser.username && dataForm.password === savedUser.password) {
+      // Simulasi sukses login
+      const fakeResponse = {
+        accessToken: "simulated-token-for-" + savedUser.username,
+        username: savedUser.username,
+        firstName: savedUser.workshopName || "User",
+        image: "https://robohash.org/set_set4/user.png"
+      };
+
+      localStorage.setItem("token", fakeResponse.accessToken);
+      localStorage.setItem("user", JSON.stringify(fakeResponse));
+
+      setTimeout(() => {
+        setLoading(false);
+        navigate("/");
+      }, 1000); // Delay dikit biar keren ada loadingnya
+      return; // Berhenti di sini, jangan lanjut ke API
+    }
+    // -------------------------------------------------------------
+
+    // Jika tidak ada di localStorage, baru coba tembak API DummyJSON
     try {
       const response = await axios.post("https://dummyjson.com/auth/login", {
         username: dataForm.username,
@@ -33,11 +58,8 @@ export default function Login() {
       });
 
       if (response.status === 200) {
-        // Simpan token ke localStorage agar bisa diakses oleh MainLayout/Dashboard
         localStorage.setItem("token", response.data.accessToken);
         localStorage.setItem("user", JSON.stringify(response.data));
-
-        // Redirect ke Dashboard (rute "/")
         navigate("/");
       }
     } catch (err) {
@@ -57,7 +79,6 @@ export default function Login() {
         Login to your account
       </h2>
 
-      {/* Tampilan Error */}
       {error && (
         <div className="bg-red-100 mb-5 p-4 text-sm text-red-700 rounded-2xl flex items-center border border-red-200">
           <BsFillExclamationDiamondFill className="me-2 text-lg" />

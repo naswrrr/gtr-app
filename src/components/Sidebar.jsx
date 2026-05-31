@@ -10,6 +10,7 @@ export default function Sidebar() {
     { name: 'Customers', path: '/customers', icon: '👥' },
     { name: 'Bookings', path: '/bookings', icon: '📅' },
     { name: 'Staff Management', path: '/staff', icon: '🧑‍💼' },
+    { name: 'Components', path: '/components', icon: '🧩' },
   ];
 
   return (
