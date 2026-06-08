@@ -5,12 +5,12 @@ export default function Sidebar() {
 
   const navItems = [
     { name: 'Dashboard', path: '/', icon: '📊' },
-    { name: 'Inventory', path: '/inventory', icon: '📦' },
-    { name: 'Repair tracker', path: '/repair', icon: '🔧' },
-    { name: 'Customers', path: '/customers', icon: '👥' },
-    { name: 'Bookings', path: '/bookings', icon: '📅' },
-    { name: 'Staff Management', path: '/staff', icon: '🧑‍💼' },
-    { name: 'Components', path: '/components', icon: '🧩' },
+    { name: 'Customer Management', path: '/customers', icon: '👥' },
+    { name: 'Marketing Automation', path: '/marketing', icon: '📢' },
+    { name: 'Customer Analytics', path: '/analytics', icon: '📈' },
+    { name: 'Feedback & Complaint', path: '/feedback', icon: '⭐' },
+    { name: 'Inventory Stock', path: '/inventory', icon: '📦' },
+    { name: 'Billing & Payment', path: '/payment', icon: '💳' },
   ];
 
   return (

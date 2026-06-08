@@ -1,0 +1,3290 @@
+[
+  {
+    "id": "CUST-001",
+    "name": "Mark Johnson",
+    "username": "mark_johnson",
+    "gender": "Laki-laki",
+    "birthDate": "1997-09-25",
+    "email": "mark.johnson@mail.com",
+    "phone": "+624332181960",
+    "location": "East Jill, GD",
+    "socialMedia": "@mark_johnson",
+    "joinDate": "2025-08-27",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "MARJOHFIX01",
+    "orders": 27,
+    "spent": "$2,205.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-07 04:45 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-09",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-002",
+    "name": "Joshua Garza",
+    "username": "joshua_garza",
+    "gender": "Laki-laki",
+    "birthDate": "1994-10-25",
+    "email": "joshua.garza@mail.com",
+    "phone": "+626155940781",
+    "location": "East Jessetown, TJ",
+    "socialMedia": "@joshua_garza",
+    "joinDate": "2024-01-11",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "JOSGARFIX02",
+    "orders": 70,
+    "spent": "$2,701.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-02 01:15 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-09",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-003",
+    "name": "Marie Gardner",
+    "username": "marie_gardner",
+    "gender": "Perempuan",
+    "birthDate": "1997-01-29",
+    "email": "marie.gardner@mail.com",
+    "phone": "+623419283276",
+    "location": "Lisatown, PS",
+    "socialMedia": "@marie_gardner",
+    "joinDate": "2025-11-07",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "MARGARFIX03",
+    "orders": 41,
+    "spent": "$6,594.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-01 06:45 PM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-29",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-004",
+    "name": "Melissa Peterson",
+    "username": "melissa_peterson",
+    "gender": "Perempuan",
+    "birthDate": "1996-04-19",
+    "email": "melissa.peterson@mail.com",
+    "phone": "+622423884969",
+    "location": "Curtisfurt, BY",
+    "socialMedia": "@melissa_peterson",
+    "joinDate": "2024-07-05",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "MELPETFIX04",
+    "orders": 28,
+    "spent": "$1,433.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-01 02:15 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-005",
+    "name": "Hailey Baker",
+    "username": "hailey_baker",
+    "gender": "Perempuan",
+    "birthDate": "1994-12-15",
+    "email": "hailey.baker@mail.com",
+    "phone": "+628018451462",
+    "location": "Herrerafurt, BR",
+    "socialMedia": "@hailey_baker",
+    "joinDate": "2025-02-02",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "HAIBAKFIX05",
+    "orders": 33,
+    "spent": "$4,400.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-04 03:30 AM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-04",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-006",
+    "name": "Ronald Montgomery",
+    "username": "ronald_montgomery",
+    "gender": "Laki-laki",
+    "birthDate": "2004-10-09",
+    "email": "ronald.montgomery@mail.com",
+    "phone": "+629117182278",
+    "location": "Lake Chad, HR",
+    "socialMedia": "@ronald_montgomery",
+    "joinDate": "2024-02-12",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "RONMONFIX06",
+    "orders": 67,
+    "spent": "$5,269.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 12:30 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-15",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-007",
+    "name": "Dylan Miller",
+    "username": "dylan_miller",
+    "gender": "Laki-laki",
+    "birthDate": "1997-03-24",
+    "email": "dylan.miller@mail.com",
+    "phone": "+620983930103",
+    "location": "South Joshuastad, DK",
+    "socialMedia": "@dylan_miller",
+    "joinDate": "2024-07-17",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "DYLMILFIX07",
+    "orders": 42,
+    "spent": "$880.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-05 11:45 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-19",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-008",
+    "name": "Christine Adams",
+    "username": "christine_adams",
+    "gender": "Perempuan",
+    "birthDate": "2005-09-03",
+    "email": "christine.adams@mail.com",
+    "phone": "+621165667010",
+    "location": "New Cynthiaside, ZA",
+    "socialMedia": "@christine_adams",
+    "joinDate": "2024-03-02",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "CHRADAFIX08",
+    "orders": 13,
+    "spent": "$2,336.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-08 03:45 AM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 3,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-009",
+    "name": "Joel Nelson",
+    "username": "joel_nelson",
+    "gender": "Laki-laki",
+    "birthDate": "2005-07-15",
+    "email": "joel.nelson@mail.com",
+    "phone": "+628013267736",
+    "location": "Lake Mark, BG",
+    "socialMedia": "@joel_nelson",
+    "joinDate": "2024-02-14",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "JOENELFIX09",
+    "orders": 48,
+    "spent": "$317.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-05 07:45 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 2,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-010",
+    "name": "Andrew Stewart",
+    "username": "andrew_stewart",
+    "gender": "Laki-laki",
+    "birthDate": "1997-08-24",
+    "email": "andrew.stewart@mail.com",
+    "phone": "+620097882081",
+    "location": "New Nancy, KW",
+    "socialMedia": "@andrew_stewart",
+    "joinDate": "2024-01-27",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "ANDSTEFIX10",
+    "orders": 76,
+    "spent": "$856.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-07 02:15 AM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-17",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-011",
+    "name": "Kathryn Wilkerson",
+    "username": "kathryn_wilkerson",
+    "gender": "Perempuan",
+    "birthDate": "2002-02-23",
+    "email": "kathryn.wilkerson@mail.com",
+    "phone": "+624624751079",
+    "location": "West Donald, CH",
+    "socialMedia": "@kathryn_wilkerson",
+    "joinDate": "2025-02-12",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "KATWILFIX11",
+    "orders": 68,
+    "spent": "$2,046.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-06 02:15 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-23",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-012",
+    "name": "Deborah Richards",
+    "username": "deborah_richards",
+    "gender": "Perempuan",
+    "birthDate": "2005-03-17",
+    "email": "deborah.richards@mail.com",
+    "phone": "+622411824493",
+    "location": "Coxberg, SE",
+    "socialMedia": "@deborah_richards",
+    "joinDate": "2024-11-29",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "DEBRICFIX12",
+    "orders": 33,
+    "spent": "$4,440.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-02 11:45 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-21",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-013",
+    "name": "Nicole Callahan",
+    "username": "nicole_callahan",
+    "gender": "Perempuan",
+    "birthDate": "1996-04-07",
+    "email": "nicole.callahan@mail.com",
+    "phone": "+621128059826",
+    "location": "Port Erin, UG",
+    "socialMedia": "@nicole_callahan",
+    "joinDate": "2023-08-16",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "NICCALFIX13",
+    "orders": 39,
+    "spent": "$3,287.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-04 11:00 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-05",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-014",
+    "name": "Jane Ferrell",
+    "username": "jane_ferrell",
+    "gender": "Perempuan",
+    "birthDate": "2000-10-13",
+    "email": "jane.ferrell@mail.com",
+    "phone": "+622563421607",
+    "location": "Lake Jenniferside, GB",
+    "socialMedia": "@jane_ferrell",
+    "joinDate": "2024-03-26",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "JANFERFIX14",
+    "orders": 58,
+    "spent": "$3,164.00",
+    "source": "Google Maps",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 01:15 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-12",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-015",
+    "name": "Margaret Rodriguez",
+    "username": "margaret_rodriguez",
+    "gender": "Perempuan",
+    "birthDate": "1999-08-26",
+    "email": "margaret.rodriguez@mail.com",
+    "phone": "+621429401965",
+    "location": "Smithview, SC",
+    "socialMedia": "@margaret_rodriguez",
+    "joinDate": "2025-09-20",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "MARRODFIX15",
+    "orders": 77,
+    "spent": "$4,489.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-04 05:00 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-22",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-016",
+    "name": "Jordan Rodriguez",
+    "username": "jordan_rodriguez",
+    "gender": "Laki-laki",
+    "birthDate": "2001-12-08",
+    "email": "jordan.rodriguez@mail.com",
+    "phone": "+629514846564",
+    "location": "East Nathaniel, DK",
+    "socialMedia": "@jordan_rodriguez",
+    "joinDate": "2025-01-19",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "JORRODFIX16",
+    "orders": 53,
+    "spent": "$5,747.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-07 09:00 PM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-20",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-017",
+    "name": "Paula Moreno",
+    "username": "paula_moreno",
+    "gender": "Perempuan",
+    "birthDate": "1994-06-10",
+    "email": "paula.moreno@mail.com",
+    "phone": "+628721489513",
+    "location": "Tracyville, ML",
+    "socialMedia": "@paula_moreno",
+    "joinDate": "2026-01-26",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "PAUMORFIX17",
+    "orders": 25,
+    "spent": "$1,507.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 08:00 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-23",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-018",
+    "name": "Ronald Parker",
+    "username": "ronald_parker",
+    "gender": "Laki-laki",
+    "birthDate": "1995-02-16",
+    "email": "ronald.parker@mail.com",
+    "phone": "+620163287083",
+    "location": "North Jessicaland, PS",
+    "socialMedia": "@ronald_parker",
+    "joinDate": "2025-01-11",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "RONPARFIX18",
+    "orders": 17,
+    "spent": "$6,865.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-08 10:45 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-09",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-019",
+    "name": "Beth Keller",
+    "username": "beth_keller",
+    "gender": "Perempuan",
+    "birthDate": "2005-10-18",
+    "email": "beth.keller@mail.com",
+    "phone": "+624714345581",
+    "location": "West Allison, UZ",
+    "socialMedia": "@beth_keller",
+    "joinDate": "2024-09-13",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "BETKELFIX19",
+    "orders": 29,
+    "spent": "$3,437.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 02:45 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-07",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-020",
+    "name": "Daniel Ryan",
+    "username": "daniel_ryan",
+    "gender": "Laki-laki",
+    "birthDate": "2003-03-12",
+    "email": "daniel.ryan@mail.com",
+    "phone": "+627054668893",
+    "location": "Lake Larry, SV",
+    "socialMedia": "@daniel_ryan",
+    "joinDate": "2025-05-20",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "DANRYAFIX20",
+    "orders": 34,
+    "spent": "$3,870.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-07 06:45 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-01",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-021",
+    "name": "Jessica Holmes",
+    "username": "jessica_holmes",
+    "gender": "Perempuan",
+    "birthDate": "1995-11-20",
+    "email": "jessica.holmes@mail.com",
+    "phone": "+627204653755",
+    "location": "North Matthew, TZ",
+    "socialMedia": "@jessica_holmes",
+    "joinDate": "2025-02-04",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "JESHOLFIX21",
+    "orders": 53,
+    "spent": "$2,366.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-01 06:15 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-07",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-022",
+    "name": "Kevin Smith",
+    "username": "kevin_smith",
+    "gender": "Laki-laki",
+    "birthDate": "2002-12-05",
+    "email": "kevin.smith@mail.com",
+    "phone": "+621937452991",
+    "location": "East Carloston, LS",
+    "socialMedia": "@kevin_smith",
+    "joinDate": "2023-08-24",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "KEVSMIFIX22",
+    "orders": 13,
+    "spent": "$5,040.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-07 07:15 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-28",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-023",
+    "name": "David Caldwell",
+    "username": "david_caldwell",
+    "gender": "Laki-laki",
+    "birthDate": "1997-01-01",
+    "email": "david.caldwell@mail.com",
+    "phone": "+628651850671",
+    "location": "Lake Selena, TO",
+    "socialMedia": "@david_caldwell",
+    "joinDate": "2025-02-28",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "DAVCALFIX23",
+    "orders": 58,
+    "spent": "$6,094.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-05 10:45 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-28",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-024",
+    "name": "Dana Kennedy",
+    "username": "dana_kennedy",
+    "gender": "Perempuan",
+    "birthDate": "1999-04-27",
+    "email": "dana.kennedy@mail.com",
+    "phone": "+627996507527",
+    "location": "North Donnastad, NO",
+    "socialMedia": "@dana_kennedy",
+    "joinDate": "2024-08-31",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "DANKENFIX24",
+    "orders": 33,
+    "spent": "$3,088.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-04 02:15 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-16",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-025",
+    "name": "Scott Brown",
+    "username": "scott_brown",
+    "gender": "Laki-laki",
+    "birthDate": "2002-04-11",
+    "email": "scott.brown@mail.com",
+    "phone": "+623634957885",
+    "location": "North Richardmouth, CD",
+    "socialMedia": "@scott_brown",
+    "joinDate": "2024-03-06",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "SCOBROFIX25",
+    "orders": 45,
+    "spent": "$6,057.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-05 04:00 AM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-06",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-026",
+    "name": "Cheryl West",
+    "username": "cheryl_west",
+    "gender": "Perempuan",
+    "birthDate": "1999-07-01",
+    "email": "cheryl.west@mail.com",
+    "phone": "+621343524082",
+    "location": "Stevenland, PA",
+    "socialMedia": "@cheryl_west",
+    "joinDate": "2025-11-09",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "CHEWESFIX26",
+    "orders": 6,
+    "spent": "$4,833.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-02 01:30 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-09",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-027",
+    "name": "Savannah Garcia",
+    "username": "savannah_garcia",
+    "gender": "Perempuan",
+    "birthDate": "2002-04-05",
+    "email": "savannah.garcia@mail.com",
+    "phone": "+621902294131",
+    "location": "North Sarabury, DM",
+    "socialMedia": "@savannah_garcia",
+    "joinDate": "2024-08-26",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "SAVGARFIX27",
+    "orders": 66,
+    "spent": "$3,416.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-07 05:00 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 5,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-028",
+    "name": "John Hancock",
+    "username": "john_hancock",
+    "gender": "Laki-laki",
+    "birthDate": "2005-04-06",
+    "email": "john.hancock@mail.com",
+    "phone": "+628120679740",
+    "location": "South Aaron, MW",
+    "socialMedia": "@john_hancock",
+    "joinDate": "2024-03-24",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "JOHHANFIX28",
+    "orders": 36,
+    "spent": "$6,058.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 05:15 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-029",
+    "name": "Richard Gibson",
+    "username": "richard_gibson",
+    "gender": "Laki-laki",
+    "birthDate": "1999-07-06",
+    "email": "richard.gibson@mail.com",
+    "phone": "+620249947174",
+    "location": "Mooreport, GM",
+    "socialMedia": "@richard_gibson",
+    "joinDate": "2026-05-04",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "RICGIBFIX29",
+    "orders": 64,
+    "spent": "$4,723.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-01 07:30 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 0,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-030",
+    "name": "Kerry Daniels",
+    "username": "kerry_daniels",
+    "gender": "Laki-laki",
+    "birthDate": "2003-05-30",
+    "email": "kerry.daniels@mail.com",
+    "phone": "+627874296717",
+    "location": "North Breannahaven, SM",
+    "socialMedia": "@kerry_daniels",
+    "joinDate": "2023-11-27",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "KERDANFIX30",
+    "orders": 42,
+    "spent": "$2,930.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-03 06:45 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-02",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-031",
+    "name": "Tonya Miller",
+    "username": "tonya_miller",
+    "gender": "Perempuan",
+    "birthDate": "1996-08-30",
+    "email": "tonya.miller@mail.com",
+    "phone": "+621680876038",
+    "location": "Lake Michellefurt, CL",
+    "socialMedia": "@tonya_miller",
+    "joinDate": "2026-04-04",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "TONMILFIX31",
+    "orders": 80,
+    "spent": "$3,921.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-05 09:15 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-21",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-032",
+    "name": "Laura Riley",
+    "username": "laura_riley",
+    "gender": "Perempuan",
+    "birthDate": "1994-11-29",
+    "email": "laura.riley@mail.com",
+    "phone": "+628613171274",
+    "location": "South Dianeshire, SK",
+    "socialMedia": "@laura_riley",
+    "joinDate": "2024-05-19",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "LAURILFIX32",
+    "orders": 61,
+    "spent": "$4,168.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-03 07:15 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-11",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-033",
+    "name": "Debbie Santiago",
+    "username": "debbie_santiago",
+    "gender": "Perempuan",
+    "birthDate": "1998-03-16",
+    "email": "debbie.santiago@mail.com",
+    "phone": "+629972787558",
+    "location": "Randyport, PK",
+    "socialMedia": "@debbie_santiago",
+    "joinDate": "2024-05-19",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "DEBSANFIX33",
+    "orders": 41,
+    "spent": "$1,845.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-07 04:45 AM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-13",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-034",
+    "name": "Paul Jones",
+    "username": "paul_jones",
+    "gender": "Laki-laki",
+    "birthDate": "1999-12-07",
+    "email": "paul.jones@mail.com",
+    "phone": "+621718702621",
+    "location": "North Amandahaven, IN",
+    "socialMedia": "@paul_jones",
+    "joinDate": "2023-10-31",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "PAUJONFIX34",
+    "orders": 43,
+    "spent": "$5,405.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-06 11:45 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-035",
+    "name": "Hannah Jones",
+    "username": "hannah_jones",
+    "gender": "Perempuan",
+    "birthDate": "1997-05-13",
+    "email": "hannah.jones@mail.com",
+    "phone": "+621611724005",
+    "location": "Ericside, MA",
+    "socialMedia": "@hannah_jones",
+    "joinDate": "2024-05-04",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "HANJONFIX35",
+    "orders": 45,
+    "spent": "$3,370.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 09:45 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 1,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-036",
+    "name": "William Roman",
+    "username": "william_roman",
+    "gender": "Laki-laki",
+    "birthDate": "2000-10-12",
+    "email": "william.roman@mail.com",
+    "phone": "+629237474074",
+    "location": "Sarahville, CR",
+    "socialMedia": "@william_roman",
+    "joinDate": "2024-03-23",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "WILROMFIX36",
+    "orders": 56,
+    "spent": "$3,130.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-05 08:30 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 3,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-037",
+    "name": "Stacy Newton",
+    "username": "stacy_newton",
+    "gender": "Perempuan",
+    "birthDate": "1996-04-19",
+    "email": "stacy.newton@mail.com",
+    "phone": "+624064090974",
+    "location": "Cassandramouth, GA",
+    "socialMedia": "@stacy_newton",
+    "joinDate": "2025-06-30",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "STANEWFIX37",
+    "orders": 28,
+    "spent": "$5,515.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-02 11:00 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-05",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-038",
+    "name": "Sarah Wagner",
+    "username": "sarah_wagner",
+    "gender": "Perempuan",
+    "birthDate": "1997-06-12",
+    "email": "sarah.wagner@mail.com",
+    "phone": "+623285884247",
+    "location": "North Cynthiaview, BD",
+    "socialMedia": "@sarah_wagner",
+    "joinDate": "2023-06-11",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "SARWAGFIX38",
+    "orders": 14,
+    "spent": "$4,136.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 11:45 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 3,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-039",
+    "name": "Patricia Walsh",
+    "username": "patricia_walsh",
+    "gender": "Perempuan",
+    "birthDate": "1997-07-30",
+    "email": "patricia.walsh@mail.com",
+    "phone": "+629651370985",
+    "location": "Arnoldchester, TJ",
+    "socialMedia": "@patricia_walsh",
+    "joinDate": "2023-06-18",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "PATWALFIX39",
+    "orders": 59,
+    "spent": "$6,043.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Member Baru",
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-03 01:00 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 0,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-040",
+    "name": "Angela Ware",
+    "username": "angela_ware",
+    "gender": "Perempuan",
+    "birthDate": "2005-04-12",
+    "email": "angela.ware@mail.com",
+    "phone": "+628692617964",
+    "location": "Port Mikeside, CY",
+    "socialMedia": "@angela_ware",
+    "joinDate": "2024-09-21",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "ANGWARFIX40",
+    "orders": 27,
+    "spent": "$3,932.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-06 02:30 PM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-28",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-041",
+    "name": "Andrew Diaz",
+    "username": "andrew_diaz",
+    "gender": "Laki-laki",
+    "birthDate": "2005-08-18",
+    "email": "andrew.diaz@mail.com",
+    "phone": "+625329318393",
+    "location": "West Jasonbury, TL",
+    "socialMedia": "@andrew_diaz",
+    "joinDate": "2023-09-28",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "ANDDIAFIX41",
+    "orders": 18,
+    "spent": "$6,760.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-05 03:15 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-05",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-042",
+    "name": "Penny Henson",
+    "username": "penny_henson",
+    "gender": "Perempuan",
+    "birthDate": "1999-04-24",
+    "email": "penny.henson@mail.com",
+    "phone": "+622402681177",
+    "location": "East Michelle, EE",
+    "socialMedia": "@penny_henson",
+    "joinDate": "2026-01-29",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "PENHENFIX42",
+    "orders": 57,
+    "spent": "$4,427.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-08 11:00 AM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-16",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-043",
+    "name": "Allison Doyle",
+    "username": "allison_doyle",
+    "gender": "Perempuan",
+    "birthDate": "1998-06-02",
+    "email": "allison.doyle@mail.com",
+    "phone": "+621249985698",
+    "location": "Phambury, IQ",
+    "socialMedia": "@allison_doyle",
+    "joinDate": "2023-11-29",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "ALLDOYFIX43",
+    "orders": 64,
+    "spent": "$5,259.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-02 11:15 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-13",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-044",
+    "name": "Meredith Reyes",
+    "username": "meredith_reyes",
+    "gender": "Perempuan",
+    "birthDate": "1994-11-24",
+    "email": "meredith.reyes@mail.com",
+    "phone": "+624527111161",
+    "location": "Walkermouth, MG",
+    "socialMedia": "@meredith_reyes",
+    "joinDate": "2024-05-07",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "MERREYFIX44",
+    "orders": 71,
+    "spent": "$791.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-02 07:30 PM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-04",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-045",
+    "name": "Rebecca Perez",
+    "username": "rebecca_perez",
+    "gender": "Perempuan",
+    "birthDate": "1994-09-19",
+    "email": "rebecca.perez@mail.com",
+    "phone": "+621585149368",
+    "location": "South Mark, BJ",
+    "socialMedia": "@rebecca_perez",
+    "joinDate": "2026-05-02",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "REBPERFIX45",
+    "orders": 3,
+    "spent": "$1,777.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-06 01:15 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-24",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-046",
+    "name": "Douglas May",
+    "username": "douglas_may",
+    "gender": "Laki-laki",
+    "birthDate": "1999-03-25",
+    "email": "douglas.may@mail.com",
+    "phone": "+626752545991",
+    "location": "Sheilaville, IL",
+    "socialMedia": "@douglas_may",
+    "joinDate": "2023-12-20",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "DOUMAYFIX46",
+    "orders": 20,
+    "spent": "$6,480.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-02 05:45 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-07",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-047",
+    "name": "Tonya Baker",
+    "username": "tonya_baker",
+    "gender": "Perempuan",
+    "birthDate": "1995-09-26",
+    "email": "tonya.baker@mail.com",
+    "phone": "+624978403690",
+    "location": "Reedmouth, NZ",
+    "socialMedia": "@tonya_baker",
+    "joinDate": "2025-04-02",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "TONBAKFIX47",
+    "orders": 38,
+    "spent": "$2,030.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-06 02:00 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 3,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-048",
+    "name": "Jorge Cruz",
+    "username": "jorge_cruz",
+    "gender": "Laki-laki",
+    "birthDate": "2001-05-09",
+    "email": "jorge.cruz@mail.com",
+    "phone": "+621606071596",
+    "location": "Bradleychester, AD",
+    "socialMedia": "@jorge_cruz",
+    "joinDate": "2024-12-28",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "JORCRUFIX48",
+    "orders": 37,
+    "spent": "$1,243.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-06 03:45 PM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-14",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-049",
+    "name": "Robert Mcdaniel",
+    "username": "robert_mcdaniel",
+    "gender": "Laki-laki",
+    "birthDate": "2005-09-19",
+    "email": "robert.mcdaniel@mail.com",
+    "phone": "+624535218188",
+    "location": "West Ryan, TL",
+    "socialMedia": "@robert_mcdaniel",
+    "joinDate": "2026-03-13",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "ROBMCDFIX49",
+    "orders": 44,
+    "spent": "$6,258.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 02:15 PM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-03",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-050",
+    "name": "Lisa Alvarado",
+    "username": "lisa_alvarado",
+    "gender": "Perempuan",
+    "birthDate": "1995-12-06",
+    "email": "lisa.alvarado@mail.com",
+    "phone": "+625271774490",
+    "location": "Williamchester, LR",
+    "socialMedia": "@lisa_alvarado",
+    "joinDate": "2024-08-22",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "LISALVFIX50",
+    "orders": 39,
+    "spent": "$4,082.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-01 06:30 AM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-15",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-051",
+    "name": "Edward Martinez",
+    "username": "edward_martinez",
+    "gender": "Laki-laki",
+    "birthDate": "1999-06-24",
+    "email": "edward.martinez@mail.com",
+    "phone": "+629782071518",
+    "location": "Byrdburgh, VE",
+    "socialMedia": "@edward_martinez",
+    "joinDate": "2025-02-20",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "EDWMARFIX51",
+    "orders": 31,
+    "spent": "$6,096.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-03 06:30 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-20",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-052",
+    "name": "Jennifer Bass",
+    "username": "jennifer_bass",
+    "gender": "Perempuan",
+    "birthDate": "1998-01-29",
+    "email": "jennifer.bass@mail.com",
+    "phone": "+628644925192",
+    "location": "South Kristi, UZ",
+    "socialMedia": "@jennifer_bass",
+    "joinDate": "2025-05-25",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "JENBASFIX52",
+    "orders": 50,
+    "spent": "$1,356.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-07 11:30 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-22",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-053",
+    "name": "Julie Ramos",
+    "username": "julie_ramos",
+    "gender": "Perempuan",
+    "birthDate": "1996-12-30",
+    "email": "julie.ramos@mail.com",
+    "phone": "+625423573322",
+    "location": "Leonburgh, KM",
+    "socialMedia": "@julie_ramos",
+    "joinDate": "2023-09-08",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "JULRAMFIX53",
+    "orders": 12,
+    "spent": "$4,458.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-06 10:15 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 1,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-054",
+    "name": "Jose Schultz",
+    "username": "jose_schultz",
+    "gender": "Laki-laki",
+    "birthDate": "1998-06-16",
+    "email": "jose.schultz@mail.com",
+    "phone": "+625379473834",
+    "location": "Lake Lance, FJ",
+    "socialMedia": "@jose_schultz",
+    "joinDate": "2023-11-16",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "JOSSCHFIX54",
+    "orders": 47,
+    "spent": "$5,856.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-05 07:45 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-055",
+    "name": "Amber Riggs",
+    "username": "amber_riggs",
+    "gender": "Perempuan",
+    "birthDate": "2001-10-08",
+    "email": "amber.riggs@mail.com",
+    "phone": "+628181412478",
+    "location": "South Robertshire, FI",
+    "socialMedia": "@amber_riggs",
+    "joinDate": "2025-08-03",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "AMBRIGFIX55",
+    "orders": 11,
+    "spent": "$2,118.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-07 01:45 PM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-08",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-056",
+    "name": "Janet Ross",
+    "username": "janet_ross",
+    "gender": "Perempuan",
+    "birthDate": "1996-03-15",
+    "email": "janet.ross@mail.com",
+    "phone": "+622047277901",
+    "location": "Port Michelleville, NO",
+    "socialMedia": "@janet_ross",
+    "joinDate": "2024-02-02",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "JANROSFIX56",
+    "orders": 27,
+    "spent": "$1,524.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-02 05:15 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 0,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-057",
+    "name": "Robert Dominguez",
+    "username": "robert_dominguez",
+    "gender": "Laki-laki",
+    "birthDate": "2000-01-04",
+    "email": "robert.dominguez@mail.com",
+    "phone": "+629808932460",
+    "location": "Port David, CR",
+    "socialMedia": "@robert_dominguez",
+    "joinDate": "2025-11-02",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "ROBDOMFIX57",
+    "orders": 73,
+    "spent": "$3,712.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-02 09:00 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-09",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-058",
+    "name": "Mary Travis",
+    "username": "mary_travis",
+    "gender": "Perempuan",
+    "birthDate": "2001-07-30",
+    "email": "mary.travis@mail.com",
+    "phone": "+621952058527",
+    "location": "Salazarhaven, NP",
+    "socialMedia": "@mary_travis",
+    "joinDate": "2025-12-04",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "MARTRAFIX58",
+    "orders": 17,
+    "spent": "$816.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-05 04:00 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-13",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-059",
+    "name": "Joshua Merritt",
+    "username": "joshua_merritt",
+    "gender": "Laki-laki",
+    "birthDate": "2003-05-11",
+    "email": "joshua.merritt@mail.com",
+    "phone": "+624505415667",
+    "location": "Colebury, DZ",
+    "socialMedia": "@joshua_merritt",
+    "joinDate": "2024-04-06",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "JOSMERFIX59",
+    "orders": 23,
+    "spent": "$4,364.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-05 02:45 AM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-18",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-060",
+    "name": "Richard Washington",
+    "username": "richard_washington",
+    "gender": "Laki-laki",
+    "birthDate": "1997-04-21",
+    "email": "richard.washington@mail.com",
+    "phone": "+624479627570",
+    "location": "Jonesport, GW",
+    "socialMedia": "@richard_washington",
+    "joinDate": "2024-03-31",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "RICWASFIX60",
+    "orders": 35,
+    "spent": "$5,538.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-07 06:15 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-02",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-061",
+    "name": "Emma Fernandez",
+    "username": "emma_fernandez",
+    "gender": "Perempuan",
+    "birthDate": "1996-02-04",
+    "email": "emma.fernandez@mail.com",
+    "phone": "+626909275571",
+    "location": "South Heather, MA",
+    "socialMedia": "@emma_fernandez",
+    "joinDate": "2024-01-28",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "EMMFERFIX61",
+    "orders": 50,
+    "spent": "$2,875.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-02 01:15 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-062",
+    "name": "Jason Rivera",
+    "username": "jason_rivera",
+    "gender": "Laki-laki",
+    "birthDate": "2000-01-10",
+    "email": "jason.rivera@mail.com",
+    "phone": "+627312172715",
+    "location": "East Marissafurt, TV",
+    "socialMedia": "@jason_rivera",
+    "joinDate": "2026-04-09",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "JASRIVFIX62",
+    "orders": 70,
+    "spent": "$4,741.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-03 06:15 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 1,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-063",
+    "name": "Alicia Gilmore",
+    "username": "alicia_gilmore",
+    "gender": "Perempuan",
+    "birthDate": "2001-05-05",
+    "email": "alicia.gilmore@mail.com",
+    "phone": "+627829114678",
+    "location": "Smithstad, KG",
+    "socialMedia": "@alicia_gilmore",
+    "joinDate": "2025-09-10",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "ALIGILFIX63",
+    "orders": 73,
+    "spent": "$904.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-08 08:30 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-27",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-064",
+    "name": "Scott Ashley",
+    "username": "scott_ashley",
+    "gender": "Laki-laki",
+    "birthDate": "1999-06-18",
+    "email": "scott.ashley@mail.com",
+    "phone": "+625358414384",
+    "location": "South Jeffrey, NZ",
+    "socialMedia": "@scott_ashley",
+    "joinDate": "2024-11-21",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "SCOASHFIX64",
+    "orders": 78,
+    "spent": "$4,670.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026",
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-03 11:30 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 0,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-065",
+    "name": "Jasmine Caldwell",
+    "username": "jasmine_caldwell",
+    "gender": "Perempuan",
+    "birthDate": "2004-01-05",
+    "email": "jasmine.caldwell@mail.com",
+    "phone": "+627844736471",
+    "location": "Port Tanner, CN",
+    "socialMedia": "@jasmine_caldwell",
+    "joinDate": "2026-05-17",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "JASCALFIX65",
+    "orders": 56,
+    "spent": "$3,704.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-06 10:15 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-13",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-066",
+    "name": "Joseph Meadows",
+    "username": "joseph_meadows",
+    "gender": "Laki-laki",
+    "birthDate": "2001-07-15",
+    "email": "joseph.meadows@mail.com",
+    "phone": "+623714732104",
+    "location": "North Dawnberg, PL",
+    "socialMedia": "@joseph_meadows",
+    "joinDate": "2023-12-24",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "JOSMEAFIX66",
+    "orders": 31,
+    "spent": "$1,608.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-03 08:45 PM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 3,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-067",
+    "name": "Debbie Murphy",
+    "username": "debbie_murphy",
+    "gender": "Perempuan",
+    "birthDate": "1999-11-21",
+    "email": "debbie.murphy@mail.com",
+    "phone": "+623950047974",
+    "location": "Kathleenfurt, IT",
+    "socialMedia": "@debbie_murphy",
+    "joinDate": "2025-09-09",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "DEBMURFIX67",
+    "orders": 55,
+    "spent": "$1,397.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-06 01:45 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-068",
+    "name": "Sandra King",
+    "username": "sandra_king",
+    "gender": "Perempuan",
+    "birthDate": "1995-06-01",
+    "email": "sandra.king@mail.com",
+    "phone": "+628499121655",
+    "location": "Lake Amberstad, GR",
+    "socialMedia": "@sandra_king",
+    "joinDate": "2025-05-20",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "SANKINFIX68",
+    "orders": 25,
+    "spent": "$5,235.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-01 01:00 AM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-20",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-069",
+    "name": "Rachael Pearson",
+    "username": "rachael_pearson",
+    "gender": "Perempuan",
+    "birthDate": "2003-06-26",
+    "email": "rachael.pearson@mail.com",
+    "phone": "+626949588879",
+    "location": "East Mary, VU",
+    "socialMedia": "@rachael_pearson",
+    "joinDate": "2023-11-22",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "RACPEAFIX69",
+    "orders": 2,
+    "spent": "$3,317.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-05 12:00 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-19",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-070",
+    "name": "Beth Caldwell",
+    "username": "beth_caldwell",
+    "gender": "Perempuan",
+    "birthDate": "2001-03-14",
+    "email": "beth.caldwell@mail.com",
+    "phone": "+628962309130",
+    "location": "South Holly, MN",
+    "socialMedia": "@beth_caldwell",
+    "joinDate": "2023-12-08",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "BETCALFIX70",
+    "orders": 53,
+    "spent": "$1,540.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-08 12:00 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-16",
+        "note": "Rem bunyi setelah diservis (Resolved)"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-071",
+    "name": "Lawrence Adkins",
+    "username": "lawrence_adkins",
+    "gender": "Laki-laki",
+    "birthDate": "1995-10-22",
+    "email": "lawrence.adkins@mail.com",
+    "phone": "+628585497334",
+    "location": "West Daniel, AR",
+    "socialMedia": "@lawrence_adkins",
+    "joinDate": "2026-03-22",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "LAWADKFIX71",
+    "orders": 38,
+    "spent": "$6,617.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-06 08:30 PM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-13",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-072",
+    "name": "Laura Odonnell",
+    "username": "laura_odonnell",
+    "gender": "Perempuan",
+    "birthDate": "1998-12-08",
+    "email": "laura.odonnell@mail.com",
+    "phone": "+624157473384",
+    "location": "North Brittany, YE",
+    "socialMedia": "@laura_odonnell",
+    "joinDate": "2024-02-29",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "LAUODOFIX72",
+    "orders": 13,
+    "spent": "$5,343.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026",
+      "Diskon Servis Berkala"
+    ],
+    "lastLogin": "2026-06-01 11:15 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 0,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-16",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-073",
+    "name": "Michael Turner",
+    "username": "michael_turner",
+    "gender": "Laki-laki",
+    "birthDate": "2002-08-24",
+    "email": "michael.turner@mail.com",
+    "phone": "+627734540193",
+    "location": "Port Tonyaton, LY",
+    "socialMedia": "@michael_turner",
+    "joinDate": "2025-01-11",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "MICTURFIX73",
+    "orders": 53,
+    "spent": "$1,740.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-03 12:30 AM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-30",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-074",
+    "name": "Mary Jones",
+    "username": "mary_jones",
+    "gender": "Perempuan",
+    "birthDate": "2002-03-16",
+    "email": "mary.jones@mail.com",
+    "phone": "+628743152742",
+    "location": "Port Robertfort, CD",
+    "socialMedia": "@mary_jones",
+    "joinDate": "2024-09-25",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "MARJONFIX74",
+    "orders": 37,
+    "spent": "$4,951.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-03 10:45 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 2,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-075",
+    "name": "Jack Snow",
+    "username": "jack_snow",
+    "gender": "Laki-laki",
+    "birthDate": "1999-12-14",
+    "email": "jack.snow@mail.com",
+    "phone": "+625304637454",
+    "location": "South Gregory, SK",
+    "socialMedia": "@jack_snow",
+    "joinDate": "2026-05-01",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "JACSNOFIX75",
+    "orders": 46,
+    "spent": "$5,975.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-02 08:30 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-25",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-076",
+    "name": "Debra Morton",
+    "username": "debra_morton",
+    "gender": "Perempuan",
+    "birthDate": "2000-11-21",
+    "email": "debra.morton@mail.com",
+    "phone": "+623272795687",
+    "location": "Marshallshire, IQ",
+    "socialMedia": "@debra_morton",
+    "joinDate": "2024-05-26",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "DEBMORFIX76",
+    "orders": 76,
+    "spent": "$6,750.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Promo Member Baru",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-02 10:00 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-077",
+    "name": "Danielle Michael",
+    "username": "danielle_michael",
+    "gender": "Perempuan",
+    "birthDate": "1997-10-12",
+    "email": "danielle.michael@mail.com",
+    "phone": "+621397187072",
+    "location": "Sanchezmouth, TN",
+    "socialMedia": "@danielle_michael",
+    "joinDate": "2025-04-06",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "DANMICFIX77",
+    "orders": 72,
+    "spent": "$772.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-01 07:30 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-078",
+    "name": "James Johnson",
+    "username": "james_johnson",
+    "gender": "Laki-laki",
+    "birthDate": "2004-08-23",
+    "email": "james.johnson@mail.com",
+    "phone": "+621704622656",
+    "location": "South Jason, IL",
+    "socialMedia": "@james_johnson",
+    "joinDate": "2024-06-15",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "JAMJOHFIX78",
+    "orders": 48,
+    "spent": "$957.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-06 02:15 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-27",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-079",
+    "name": "Shirley Haynes",
+    "username": "shirley_haynes",
+    "gender": "Perempuan",
+    "birthDate": "1997-09-30",
+    "email": "shirley.haynes@mail.com",
+    "phone": "+628633752431",
+    "location": "New Stacyland, GY",
+    "socialMedia": "@shirley_haynes",
+    "joinDate": "2025-08-05",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "SHIHAYFIX79",
+    "orders": 78,
+    "spent": "$6,575.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 02:00 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-08",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-080",
+    "name": "John Chang",
+    "username": "john_chang",
+    "gender": "Laki-laki",
+    "birthDate": "2002-09-20",
+    "email": "john.chang@mail.com",
+    "phone": "+620284395995",
+    "location": "Westtown, BW",
+    "socialMedia": "@john_chang",
+    "joinDate": "2024-04-25",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "JOHCHAFIX80",
+    "orders": 18,
+    "spent": "$5,708.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-07 05:30 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-21",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-081",
+    "name": "Jennifer Sanchez",
+    "username": "jennifer_sanchez",
+    "gender": "Perempuan",
+    "birthDate": "2002-05-27",
+    "email": "jennifer.sanchez@mail.com",
+    "phone": "+628566246287",
+    "location": "Thomashaven, LY",
+    "socialMedia": "@jennifer_sanchez",
+    "joinDate": "2024-09-16",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "JENSANFIX81",
+    "orders": 38,
+    "spent": "$6,096.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-07 07:15 PM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 2,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-082",
+    "name": "Nichole Rivera",
+    "username": "nichole_rivera",
+    "gender": "Perempuan",
+    "birthDate": "2002-11-13",
+    "email": "nichole.rivera@mail.com",
+    "phone": "+628304699013",
+    "location": "Kristopherbury, CL",
+    "socialMedia": "@nichole_rivera",
+    "joinDate": "2025-08-06",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "NICRIVFIX82",
+    "orders": 26,
+    "spent": "$3,027.00",
+    "source": "Google Maps",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 04:00 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-13",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-083",
+    "name": "Emily Newton",
+    "username": "emily_newton",
+    "gender": "Perempuan",
+    "birthDate": "2005-11-04",
+    "email": "emily.newton@mail.com",
+    "phone": "+628544587717",
+    "location": "East Javier, RO",
+    "socialMedia": "@emily_newton",
+    "joinDate": "2024-04-06",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "EMINEWFIX83",
+    "orders": 47,
+    "spent": "$2,863.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-04 12:15 AM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-24",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-084",
+    "name": "Kevin Wolf",
+    "username": "kevin_wolf",
+    "gender": "Laki-laki",
+    "birthDate": "2001-08-05",
+    "email": "kevin.wolf@mail.com",
+    "phone": "+623693785477",
+    "location": "Port Jamesbury, ML",
+    "socialMedia": "@kevin_wolf",
+    "joinDate": "2023-12-21",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "KEVWOLFIX84",
+    "orders": 45,
+    "spent": "$1,686.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-03 09:00 AM",
+    "device": "Samsung Galaxy S24 (Android)",
+    "stampsCount": 5,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-085",
+    "name": "Adrian Ferguson",
+    "username": "adrian_ferguson",
+    "gender": "Laki-laki",
+    "birthDate": "1997-09-22",
+    "email": "adrian.ferguson@mail.com",
+    "phone": "+621203875099",
+    "location": "New Kellyberg, DZ",
+    "socialMedia": "@adrian_ferguson",
+    "joinDate": "2026-01-14",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "ADRFERFIX85",
+    "orders": 2,
+    "spent": "$354.00",
+    "source": "Brosur Bengkel",
+    "campaignsJoined": [
+      "Promo Member Baru",
+      "Promo Awal Tahun"
+    ],
+    "lastLogin": "2026-06-01 09:30 PM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-14",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pelayanan cepat dan ruang tunggu nyaman!"
+    }
+  },
+  {
+    "id": "CUST-086",
+    "name": "John Salas",
+    "username": "john_salas",
+    "gender": "Laki-laki",
+    "birthDate": "2001-04-28",
+    "email": "john.salas@mail.com",
+    "phone": "+623984546156",
+    "location": "Mendozamouth, ER",
+    "socialMedia": "@john_salas",
+    "joinDate": "2026-05-01",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "JOHSALFIX86",
+    "orders": 28,
+    "spent": "$2,757.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-01 02:45 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-01",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-087",
+    "name": "Dawn Hensley",
+    "username": "dawn_hensley",
+    "gender": "Perempuan",
+    "birthDate": "1995-10-21",
+    "email": "dawn.hensley@mail.com",
+    "phone": "+629180339740",
+    "location": "South Travisshire, ZM",
+    "socialMedia": "@dawn_hensley",
+    "joinDate": "2025-06-29",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "DAWHENFIX87",
+    "orders": 69,
+    "spent": "$4,916.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-03 06:00 AM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 5,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-10",
+        "note": "Booking tune up mesin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-088",
+    "name": "Brittany Shepherd",
+    "username": "brittany_shepherd",
+    "gender": "Perempuan",
+    "birthDate": "2005-10-28",
+    "email": "brittany.shepherd@mail.com",
+    "phone": "+626218501631",
+    "location": "East Davidchester, UZ",
+    "socialMedia": "@brittany_shepherd",
+    "joinDate": "2025-03-22",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "BRISHEFIX88",
+    "orders": 41,
+    "spent": "$542.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-08 04:30 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-13",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-089",
+    "name": "Luke Rowe",
+    "username": "luke_rowe",
+    "gender": "Laki-laki",
+    "birthDate": "1998-12-31",
+    "email": "luke.rowe@mail.com",
+    "phone": "+624262655110",
+    "location": "Evansshire, NP",
+    "socialMedia": "@luke_rowe",
+    "joinDate": "2024-05-07",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "LUKROWFIX89",
+    "orders": 46,
+    "spent": "$6,536.00",
+    "source": "Google Maps",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-03 02:15 PM",
+    "device": "iPhone 14 (iOS)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-04",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-090",
+    "name": "Marc Lynch",
+    "username": "marc_lynch",
+    "gender": "Laki-laki",
+    "birthDate": "2003-04-25",
+    "email": "marc.lynch@mail.com",
+    "phone": "+626046618398",
+    "location": "Lake Jason, HR",
+    "socialMedia": "@marc_lynch",
+    "joinDate": "2023-09-04",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "MARLYNFIX90",
+    "orders": 21,
+    "spent": "$1,437.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-08 03:00 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-26",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-091",
+    "name": "David Arnold",
+    "username": "david_arnold",
+    "gender": "Laki-laki",
+    "birthDate": "1996-04-24",
+    "email": "david.arnold@mail.com",
+    "phone": "+629937124065",
+    "location": "Hayesfort, JP",
+    "socialMedia": "@david_arnold",
+    "joinDate": "2023-07-13",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "DAVARNFIX91",
+    "orders": 56,
+    "spent": "$3,042.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-05 06:15 PM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-10",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-092",
+    "name": "Donna Campbell",
+    "username": "donna_campbell",
+    "gender": "Perempuan",
+    "birthDate": "2004-09-30",
+    "email": "donna.campbell@mail.com",
+    "phone": "+626519398280",
+    "location": "Lake Jesusview, YE",
+    "socialMedia": "@donna_campbell",
+    "joinDate": "2025-03-15",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "DONCAMFIX92",
+    "orders": 56,
+    "spent": "$6,834.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Awal Tahun",
+      "Promo Member Baru"
+    ],
+    "lastLogin": "2026-06-08 03:30 AM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 5,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-093",
+    "name": "Robert Gonzalez",
+    "username": "robert_gonzalez",
+    "gender": "Laki-laki",
+    "birthDate": "1995-10-24",
+    "email": "robert.gonzalez@mail.com",
+    "phone": "+629796886805",
+    "location": "Lake Edward, IQ",
+    "socialMedia": "@robert_gonzalez",
+    "joinDate": "2025-11-29",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "ROBGONFIX93",
+    "orders": 31,
+    "spent": "$5,687.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-01 10:45 PM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 0,
+    "interactions": [],
+    "feedback": {
+      "rating": 5,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-094",
+    "name": "Benjamin Martin",
+    "username": "benjamin_martin",
+    "gender": "Laki-laki",
+    "birthDate": "1998-02-15",
+    "email": "benjamin.martin@mail.com",
+    "phone": "+625679825071",
+    "location": "Scottmouth, FM",
+    "socialMedia": "@benjamin_martin",
+    "joinDate": "2024-05-06",
+    "status": "Inactive",
+    "tier": "Standard",
+    "referralCode": "BENMARFIX94",
+    "orders": 10,
+    "spent": "$1,250.00",
+    "source": "Facebook Ads",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-06 05:30 PM",
+    "device": "Xiaomi 14 (Android)",
+    "stampsCount": 4,
+    "interactions": [
+      {
+        "type": "Complaint",
+        "date": "2026-05-04",
+        "note": "Tanya harga kampas rem belakang"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-095",
+    "name": "James Nelson",
+    "username": "james_nelson",
+    "gender": "Laki-laki",
+    "birthDate": "2000-11-29",
+    "email": "james.nelson@mail.com",
+    "phone": "+620105123828",
+    "location": "Millerton, NR",
+    "socialMedia": "@james_nelson",
+    "joinDate": "2025-08-21",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "JAMNELFIX95",
+    "orders": 71,
+    "spent": "$3,792.00",
+    "source": "Referral Code",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-07 11:15 AM",
+    "device": "Google Pixel 9 (Android)",
+    "stampsCount": 3,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-096",
+    "name": "Lindsey Johnson",
+    "username": "lindsey_johnson",
+    "gender": "Perempuan",
+    "birthDate": "1997-03-07",
+    "email": "lindsey.johnson@mail.com",
+    "phone": "+620334191825",
+    "location": "Port Emilyview, TR",
+    "socialMedia": "@lindsey_johnson",
+    "joinDate": "2023-07-22",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "LINJOHFIX96",
+    "orders": 58,
+    "spent": "$1,233.00",
+    "source": "Google Maps",
+    "campaignsJoined": [
+      "Promo Member Baru",
+      "Promo Ramadhan"
+    ],
+    "lastLogin": "2026-06-07 10:45 AM",
+    "device": "Oppo Reno 11 (Android)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-06",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Bagus, tapi antrean mekaniknya lumayan panjang pas weekend."
+    }
+  },
+  {
+    "id": "CUST-097",
+    "name": "Nicole Ruiz",
+    "username": "nicole_ruiz",
+    "gender": "Perempuan",
+    "birthDate": "2002-04-02",
+    "email": "nicole.ruiz@mail.com",
+    "phone": "+623412528669",
+    "location": "Howardshire, NZ",
+    "socialMedia": "@nicole_ruiz",
+    "joinDate": "2025-05-03",
+    "status": "Active",
+    "tier": "Standard",
+    "referralCode": "NICRUIFIX97",
+    "orders": 54,
+    "spent": "$1,821.00",
+    "source": "Referral Code",
+    "campaignsJoined": [
+      "Diskon Servis Berkala",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-03 08:30 AM",
+    "device": "iPhone 15 Pro (iOS)",
+    "stampsCount": 2,
+    "interactions": [
+      {
+        "type": "Service Ticket",
+        "date": "2026-05-02",
+        "note": "Komplain masalah oli rem bocor"
+      }
+    ],
+    "feedback": {
+      "rating": 4,
+      "review": "Pengerjaan standar, tapi aplikasinya gampang buat booking."
+    }
+  },
+  {
+    "id": "CUST-098",
+    "name": "John Davis",
+    "username": "john_davis",
+    "gender": "Laki-laki",
+    "birthDate": "1998-08-11",
+    "email": "john.davis@mail.com",
+    "phone": "+626887676772",
+    "location": "Manuelville, DK",
+    "socialMedia": "@john_davis",
+    "joinDate": "2024-06-03",
+    "status": "Active",
+    "tier": "Premium",
+    "referralCode": "JOHDAVFIX98",
+    "orders": 28,
+    "spent": "$2,692.00",
+    "source": "Instagram Ad",
+    "campaignsJoined": [
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-05 03:45 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 4,
+    "interactions": [],
+    "feedback": {
+      "rating": 4,
+      "review": "Mekaniknya sangat solutif menjelaskan part yang rusak."
+    }
+  },
+  {
+    "id": "CUST-099",
+    "name": "Melissa Roberts",
+    "username": "melissa_roberts",
+    "gender": "Perempuan",
+    "birthDate": "2005-10-10",
+    "email": "melissa.roberts@mail.com",
+    "phone": "+627836134074",
+    "location": "South Christopherview, LI",
+    "socialMedia": "@melissa_roberts",
+    "joinDate": "2023-10-13",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "MELROBFIX99",
+    "orders": 56,
+    "spent": "$1,261.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [],
+    "lastLogin": "2026-06-06 12:45 AM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 1,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-26",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  },
+  {
+    "id": "CUST-100",
+    "name": "Patricia Hancock",
+    "username": "patricia_hancock",
+    "gender": "Perempuan",
+    "birthDate": "2004-05-01",
+    "email": "patricia.hancock@mail.com",
+    "phone": "+625449481260",
+    "location": "Lake Mollymouth, NG",
+    "socialMedia": "@patricia_hancock",
+    "joinDate": "2023-08-06",
+    "status": "Inactive",
+    "tier": "Premium",
+    "referralCode": "PATHANFIX100",
+    "orders": 16,
+    "spent": "$2,345.00",
+    "source": "TikTok Video",
+    "campaignsJoined": [
+      "Promo Ramadhan",
+      "Giveaway Oli Shell 2026"
+    ],
+    "lastLogin": "2026-06-07 08:15 PM",
+    "device": "iPhone 13 (iOS)",
+    "stampsCount": 3,
+    "interactions": [
+      {
+        "type": "Chat",
+        "date": "2026-05-21",
+        "note": "Tanya stok ban Michelin"
+      }
+    ],
+    "feedback": {
+      "rating": 5,
+      "review": "Harganya transparan, ga dimain-mainin kayak bengkel lain."
+    }
+  }
+]

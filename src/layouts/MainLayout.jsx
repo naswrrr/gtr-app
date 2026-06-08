@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import PageHeader from '../components/PageHeader';
+import FloatingHelp from '@/components/FloatingHelp';
 
 export default function MainLayout() {
   return (
@@ -12,6 +13,7 @@ export default function MainLayout() {
         <main className="flex-1 overflow-y-auto p-6">
           <Outlet />
         </main>
+        <FloatingHelp />
       </div>
     </div>
   );

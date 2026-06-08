@@ -7,14 +7,14 @@ import AuthLayout from './layouts/AuthLayout';
 import Loading from './components/Loading';
 import NotFound from './components/NotFound';
 
-// Lazy Loaded Pages
+// Lazy Loaded Pages yang Baru 
 const Home = lazy(() => import('./pages/Home'));
 const Customers = lazy(() => import('./pages/Customers'));
 const Inventory = lazy(() => import('./pages/Inventory'));
-const RepairTracker = lazy(() => import('./pages/RepairTracker'));
-const Bookings = lazy(() => import('./pages/Bookings'));
-const Staff = lazy(() => import('./pages/Staff'));
-const Components = lazy(() => import('./pages/Components'));
+const Payment = lazy(() => import('./pages/Payment'));
+const Marketing = lazy(() => import('./pages/Marketing'));   // Baru
+const Analytics = lazy(() => import('./pages/Analytics'));   // Baru
+const Feedback = lazy(() => import('./pages/Feedback'));     // Baru
 const Login = lazy(() => import('./pages/auth/Login'));
 const Register = lazy(() => import('./pages/auth/Register'));
 const Forgot = lazy(() => import('./pages/auth/Forgot'));
@@ -34,12 +34,13 @@ function App() {
           {/* MAIN LAYOUT ROUTES */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="inventory" element={<Inventory />} />
-            <Route path="repair" element={<RepairTracker />} />
             <Route path="customers" element={<Customers />} />
-            <Route path="bookings" element={<Bookings />} />
-            <Route path="staff" element={<Staff />} />
-            <Route path="components" element={<Components />} />
+            <Route path="marketing" element={<Marketing />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="feedback" element={<Feedback />} />
+            <Route path="payment" element={<Payment />} />
+            <Route path="inventory" element={<Inventory />} />
+            
             {/* Redirect jika user nyasar ke path lama */}
             <Route path="appointments" element={<Navigate to="/customers" replace />} />
           </Route>

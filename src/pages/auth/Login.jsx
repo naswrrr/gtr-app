@@ -21,21 +21,37 @@ export default function Login() {
     });
   };
 
+  // 💡 FITUR AUTO-FILL UNTUK DEMO DOSEN
+  const handleQuickLogin = () => {
+    setDataForm({
+      username: "admin@fixflow.com",
+      password: "password123"
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    // --- LOGIKA TAMBAHAN: CEK USER DARI REGISTER (LOCALSTORAGE) ---
+    // --- LOGIKA UTAMA: CEK USER DARI REGISTER (LOCALSTORAGE) ---
     const savedUser = JSON.parse(localStorage.getItem("registeredUser"));
 
-    // Jika username & password cocok dengan yang ada di localStorage
-    if (savedUser && dataForm.username === savedUser.username && dataForm.password === savedUser.password) {
-      // Simulasi sukses login
+    // Akun cadangan default jika user belum pernah register sama sekali
+    const defaultUser = {
+      username: "admin@fixflow.com",
+      password: "password123",
+      workshopName: "FixFlow Pusat"
+    };
+
+    const userToValidate = savedUser || defaultUser;
+
+    // Jika input cocok dengan data register / data default
+    if (dataForm.username === userToValidate.username && dataForm.password === userToValidate.password) {
       const fakeResponse = {
-        accessToken: "simulated-token-for-" + savedUser.username,
-        username: savedUser.username,
-        firstName: savedUser.workshopName || "User",
+        accessToken: "simulated-token-for-" + userToValidate.username,
+        username: userToValidate.username,
+        firstName: userToValidate.workshopName || "User Admin",
         image: "https://robohash.org/set_set4/user.png"
       };
 
@@ -45,12 +61,11 @@ export default function Login() {
       setTimeout(() => {
         setLoading(false);
         navigate("/");
-      }, 1000); // Delay dikit biar keren ada loadingnya
-      return; // Berhenti di sini, jangan lanjut ke API
+      }, 1000); 
+      return; 
     }
-    // -------------------------------------------------------------
 
-    // Jika tidak ada di localStorage, baru coba tembak API DummyJSON
+    // Jika tidak cocok dengan akun lokal, baru coba tembak API DummyJSON (Cadangan Eksternal)
     try {
       const response = await axios.post("https://dummyjson.com/auth/login", {
         username: dataForm.username,
@@ -64,20 +79,23 @@ export default function Login() {
       }
     } catch (err) {
       if (err.response) {
-        setError(err.response.data.message || "Username atau Password salah.");
+        setError(err.response.data.message || "Email atau Password salah.");
       } else {
         setError("Gagal terhubung ke server.");
       }
     } finally {
-      setLoading(false);
+      loading && setLoading(false);
     }
   };
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <h2 className="text-center text-xl font-bold text-[#1A1C1E] mb-8">
+      <h2 className="text-center text-xl font-bold text-[#1A1C1E] mb-2">
         Login to your account
       </h2>
+      <p className="text-center text-xs text-gray-400 mb-6">
+        Gunakan Email yang Anda daftarkan di menu Get Started
+      </p>
 
       {error && (
         <div className="bg-red-100 mb-5 p-4 text-sm text-red-700 rounded-2xl flex items-center border border-red-200">
@@ -90,11 +108,12 @@ export default function Login() {
         <div className="space-y-1">
           <input
             name="username"
-            type="text"
+            type="email"
             required
+            value={dataForm.username}
             onChange={handleChange}
-            className="w-full rounded-2xl bg-[#F8F9FA] border border-transparent px-5 py-4 outline-none focus:ring-2 focus:ring-[#D4E34A]/50 focus:bg-white text-[#1A1C1E] placeholder:text-slate-400 transition-all"
-            placeholder="Username (e.g: emilys)"
+            className="w-full rounded-2xl bg-[#F8F9FA] border border-transparent px-5 py-4 outline-none focus:ring-2 focus:ring-[#D4E34A]/50 focus:bg-white text-[#1A1C1E] placeholder:text-slate-400 transition-all text-sm"
+            placeholder="Email Address (e.g: admin@fixflow.com)"
           />
         </div>
         <div className="relative">
@@ -102,10 +121,26 @@ export default function Login() {
             name="password"
             type="password"
             required
+            value={dataForm.password}
             onChange={handleChange}
-            className="w-full rounded-2xl bg-[#F8F9FA] border border-transparent px-5 py-4 outline-none focus:ring-2 focus:ring-[#D4E34A]/50 focus:bg-white text-[#1A1C1E] placeholder:text-slate-400 transition-all"
+            className="w-full rounded-2xl bg-[#F8F9FA] border border-transparent px-5 py-4 outline-none focus:ring-2 focus:ring-[#D4E34A]/50 focus:bg-white text-[#1A1C1E] placeholder:text-slate-400 transition-all text-sm"
             placeholder="Password"
           />
+        </div>
+
+        {/* 💡 MINI BANNER AKUN QUICK FILL */}
+        <div className="p-3 rounded-xl bg-gray-100 border border-gray-200 flex justify-between items-center">
+          <div className="text-[10px] text-gray-500 font-medium">
+            <p>💡 <span className="font-bold">Akun Demo Default:</span></p>
+            <p>Email: admin@fixflow.com | Pass: password123</p>
+          </div>
+          <button 
+            type="button" 
+            onClick={handleQuickLogin}
+            className="text-[10px] bg-[#1A1C1E] text-white px-2 py-1 rounded-md font-bold hover:bg-black transition-colors"
+          >
+            ⚡ Auto Fill
+          </button>
         </div>
 
         <div className="flex items-center justify-between text-sm">
