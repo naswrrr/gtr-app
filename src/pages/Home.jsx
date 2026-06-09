@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import StatCard from '../components/StatCard';
 import OrdersTable from '../components/OrdersTable';
 import Card from '../components/Card';
@@ -7,19 +7,16 @@ import Badge from '../components/Badge';
 import ChartCard from '../components/ChartCard';
 import CardTitle from '../components/CardTitle';
 import SummaryBar from '../components/SummaryBar';
+
 // Integrasi database JSON CRM 
 import customerData from '../data/customersData.json';
 
 export default function Home() {
   // --- LOGIC INTEGRASI CRM DATA ---
-  
-  // 1. Total data customer di database
   const totalCustomers = customerData.length;
-  
-  // 2. Hitung customer premium untuk status program loyalitas
   const premiumCount = customerData.filter(c => c.tier === 'Premium').length;
+  const regularCount = customerData.filter(c => c.tier === 'Regular').length;
   
-  // 3. Ambil servis terbaru secara dinamis dari data interaksi customer
   const dynamicOrders = [];
   customerData.forEach((customer) => {
     if (customer.interactions && customer.interactions.length > 0) {
@@ -39,18 +36,38 @@ export default function Home() {
     }
   });
 
-  // Hitung jumlah kendaraan berdasarkan status keaktifan untuk counter real-time
   const totalServisMasuk = dynamicOrders.length;
   const kendaraanSelesai = dynamicOrders.filter(o => o.status === 'Selesai').length;
-
-  // Membalik urutan agar orderan paling baru masuk di JSON berada di baris paling atas tabel
   const recentOrders = [...dynamicOrders].reverse().slice(0, 3);
 
+  // 📈 Data pertumbuhan revenue bulanan
+  const revenueData = [
+    { month: "Jan", retention: 3500000, acquisition: 1500000, cx: 30, cy: 70 },
+    { month: "Feb", retention: 5000000, acquisition: 3000000, cx: 100, cy: 50 },
+    { month: "Mar", retention: 4500000, acquisition: 6000000, cx: 170, cy: 55 },
+    { month: "Apr", retention: 7000000, acquisition: 4500000, cx: 240, cy: 30 },
+    { month: "Mei", retention: 8500000, acquisition: 5000000, cx: 310, cy: 15 },
+    { month: "Jun", retention: 9000000, acquisition: 7500000, cx: 380, cy: 10 },
+  ];
+
+  // 🎯 State untuk menangani interaksi HOVER (Mirip Tooltip Shadcn)
+  const [hoveredData, setHoveredData] = useState(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e, data) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHoveredData(data);
+    setMousePos({
+      x: e.clientX - rect.left + 15, // posisi pop-up di kanan kursor
+      y: e.clientY - rect.top - 40,  // posisi pop-up di atas kursor
+    });
+  };
+
   return (
-    <div className="p-4 space-y-6">
+    <div className="p-4 space-y-6 text-gray-800">
       <div className="mx-4 space-y-6">
         
-        {/* Row 1: StatCards - Terintegrasi Otomatis dengan JSON */}
+        {/* Row 1: StatCards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard
             title="Total Database CRM"
@@ -80,8 +97,10 @@ export default function Home() {
 
         {/* Row 2: Sales & Report */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <Card className="lg:col-span-2 p-6">
-            <div className="flex justify-between items-start mb-6">
+          
+          {/* AREA CHART CUSTOM: 100% INTERAKTIF TANPA RECHARTS */}
+          <Card className="lg:col-span-2 p-6 flex flex-col justify-between relative select-none">
+            <div className="flex justify-between items-start mb-4">
               <div>
                 <p className="text-gray-400 text-xs font-medium">Estimasi Revenue Growth CRM (2026)</p>
                 <h3 className="text-2xl font-bold flex items-center gap-2">
@@ -89,39 +108,103 @@ export default function Home() {
                   <Badge className="bg-[#D4E34A] text-black px-2 py-1 rounded-full font-bold text-[10px]">↗ 23.5%</Badge>
                 </h3>
               </div>
-              <div className="flex items-center gap-4 text-[10px] font-bold">
+              <div className="flex items-center gap-2 text-[10px] font-bold">
                 <Badge className="bg-[#D4E34A] text-black">Retention</Badge>
                 <Badge className="bg-[#A8B330] text-black">Acquisition</Badge>
-                <Button className="border border-gray-100 rounded-lg px-3 py-1.5 flex items-center gap-2 text-gray-500 font-medium text-[10px]">
-                  Periode 2026 <span className="text-[8px]">📅</span>
-                </Button>
               </div>
             </div>
             
-            {/* DATA VISUALIZATION: SVG Line Chart */}
-            <div className="h-48 w-full relative">
-              <svg viewBox="0 0 400 100" className="w-full h-full">
-                <path d="M0,60 Q50,40 100,70 T200,30 T300,80 T400,50" fill="none" stroke="#D4E34A" strokeWidth="2" />
-                <path d="M0,80 Q50,60 100,90 T200,50 T300,95 T400,70" fill="none" stroke="#A8B330" strokeWidth="2" opacity="0.6" />
+            {/* Tempat Grafik SVG Berada */}
+            <div className="h-56 w-full mt-2 relative border-b border-gray-100">
+              <svg viewBox="0 0 400 100" className="w-full h-full overflow-visible">
+                {/* Garis Bantu Horizontal */}
+                <line x1="0" y1="25" x2="400" y2="25" stroke="#f3f4f6" strokeWidth="0.5" />
+                <line x1="0" y1="50" x2="400" y2="50" stroke="#f3f4f6" strokeWidth="0.5" />
+                <line x1="0" y1="75" x2="400" y2="75" stroke="#f3f4f6" strokeWidth="0.5" />
+
+                {/* Isian Area Grafik (Gradient Fill) */}
+                <path d="M30,70 L100,50 L170,55 L240,30 L310,15 L380,10 L380,100 L30,100 Z" fill="url(#nativeRetentionGrad)" opacity="0.15" />
+                
+                {/* Garis Utama Grafik */}
+                <path d="M30,70 L100,50 L170,55 L240,30 L310,15 L380,10" fill="none" stroke="#D4E34A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                
+                {/* Titik Jangkar Sensor (Bisa Dihover) */}
+                {revenueData.map((d, i) => (
+                  <circle
+                    key={i}
+                    cx={d.cx}
+                    cy={d.cy}
+                    r={hoveredData?.month === d.month ? "6" : "4"}
+                    fill={hoveredData?.month === d.month ? "#fff" : "#D4E34A"}
+                    stroke="#A8B330"
+                    strokeWidth="2"
+                    className="cursor-pointer transition-all duration-150"
+                    onMouseMove={(e) => handleMouseMove(e, d)}
+                    onMouseLeave={() => setHoveredData(null)}
+                  />
+                ))}
+
+                {/* Teks Bulan di Sumbu X */}
+                {revenueData.map((d, i) => (
+                  <text key={i} x={d.cx} y="95" fill="#9ca3af" fontSize="7" textAnchor="middle" className="font-medium">
+                    {d.month}
+                  </text>
+                ))}
+
+                <defs>
+                  <linearGradient id="nativeRetentionGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#D4E34A" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#D4E34A" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
               </svg>
+
+              {/* 🔥 KARTU TOOLTIP MELAYANG ALA SHADCN UI YANG AKAN MUNCUL SAAT DIHOVER */}
+              {hoveredData && (
+                <div 
+                  className="absolute pointer-events-none bg-white border border-gray-200 rounded-xl p-3 shadow-xl text-[11px] min-w-[140px] z-50 flex flex-col gap-1 transition-all duration-75 ease-out"
+                  style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px` }}
+                >
+                  <p className="font-bold text-gray-400 mb-1">{hoveredData.month}, 2026</p>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-1.5 text-gray-600">
+                      <span className="w-2 h-2 rounded-full bg-[#D4E34A]"></span>
+                      Retention:
+                    </span>
+                    <span className="font-mono font-bold text-gray-900">Rp {(hoveredData.retention).toLocaleString('id-ID')}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-1.5 text-gray-600">
+                      <span className="w-2 h-2 rounded-full bg-[#A8B330]"></span>
+                      Acquisition:
+                    </span>
+                    <span className="font-mono font-bold text-gray-900">Rp {(hoveredData.acquisition).toLocaleString('id-ID')}</span>
+                  </div>
+                </div>
+              )}
             </div>
           </Card>
 
-          {/* IMPLEMENTASI CHARTCARD: Donut Chart Segmen CRM */}
+          {/* DONUT CHART SEGMENTATION */}
           <ChartCard>
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center mb-2">
               <h3 className="font-bold text-sm text-gray-800">Bauran Membership</h3>
               <span className="text-[10px] text-gray-400 font-bold uppercase">2026 ∨</span>
             </div>
-            <div className="relative flex justify-center items-center h-40">
-              <div className="w-32 h-32 rounded-full border-[12px] border-[#D4E34A] border-r-[#A8B330] border-b-gray-50 relative flex items-center justify-center">
-                <div className="text-center absolute">
-                  <p className="text-[10px] text-gray-400 font-bold uppercase">Premium</p>
-                  <p className="text-lg font-black text-gray-800">{Math.round((premiumCount/totalCustomers)*100)}%</p>
+            
+            <div className="relative flex justify-center items-center h-44">
+              {/* Mengganti PieChart Recharts dengan Lingkaran CSS Murni */}
+              <div className="w-32 h-32 rounded-full border-[14px] border-[#D4E34A] border-r-[#A8B330] border-b-gray-100 relative flex items-center justify-center animate-spin-slow">
+                <div className="text-center absolute transform rotate-0">
+                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">Premium</p>
+                  <p className="text-xl font-black text-gray-800">
+                    {totalCustomers > 0 ? Math.round((premiumCount / totalCustomers) * 100) : 0}%
+                  </p>
                 </div>
               </div>
             </div>
-            <Button className="w-full bg-[#A3B22C] text-white py-3 rounded-2xl font-bold text-sm shadow-lg active:scale-95 transition-all">
+
+            <Button className="w-full bg-[#A3B22C] text-white py-3 rounded-2xl font-bold text-sm shadow-lg hover:bg-[#8F9E24] active:scale-95 transition-all">
               Ekspor Data Member
             </Button>
           </ChartCard>
@@ -129,8 +212,6 @@ export default function Home() {
 
         {/* Row 3: Table & Summary */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* Tabel Utama: Menampilkan log antrean terintegrasi dinamis */}
           <Card className="lg:col-span-2 overflow-hidden p-6">
             <div className="flex justify-between items-center mb-6 text-gray-300 font-bold">
               <h3 className="text-gray-800">Antrean Servis Pelanggan (CRM Live)</h3>
@@ -139,7 +220,6 @@ export default function Home() {
             <OrdersTable orders={recentOrders} />
           </Card>
 
-          {/* Ringkasan Mingguan Aktivitas Masuk */}
           <Card className="p-6">
             <CardTitle
               title="Traffic Interaksi"
@@ -159,8 +239,8 @@ export default function Home() {
               ))}
             </div>
           </Card>
-
         </div>
+
       </div>
     </div>
   );
