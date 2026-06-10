@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
-import StatCard from '../components/StatCard';
+import React from 'react';
+
+// 📦 Integrasi Database JSON CRM 
+import customerData from '../data/customersData.json';
+
+// 🛠️ Import Komponen UI Pendukung
 import OrdersTable from '../components/OrdersTable';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Badge from '../components/Badge';
-import ChartCard from '../components/ChartCard';
 import CardTitle from '../components/CardTitle';
 import SummaryBar from '../components/SummaryBar';
-
-// Integrasi database JSON CRM 
-import customerData from '../data/customersData.json';
-
-// 📊 Import komponen Chart dari shadcn UI milikmu (sesuai struktur folder ui/chart.jsx)
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { Cell, Pie, PieChart } from 'recharts';
-
-// ⚙️ Konfigurasi Tema Warna untuk mengaitkan data dengan css variable di chart.jsx
-const chartConfig = {
-  premium: { label: "Premium Tier", color: "#D4E34A" },
-  regular: { label: "Regular Tier", color: "#A8B330" },
-};
+import ChartCard from '../components/ChartCard';
+import StatCard from '../components/StatCard'; 
 
 export default function Home() {
   // --- LOGIC INTEGRASI CRM DATA ---
@@ -49,32 +41,44 @@ export default function Home() {
   const totalServisMasuk = dynamicOrders.length;
   const kendaraanSelesai = dynamicOrders.filter(o => o.status === 'Selesai').length;
   const recentOrders = [...dynamicOrders].reverse().slice(0, 3);
+  const premiumPercentage = totalCustomers > 0 ? Math.round((premiumCount / totalCustomers) * 100) : 0;
 
-  // 📈 Data pertumbuhan revenue bulanan
+  // --- 📊 CONFIG & DATA RESERVED FOR SHADCN AREA CHART REVENUE ---
   const revenueData = [
-    { month: "Jan", retention: 3500000, acquisition: 1500000, cx: 30, cy: 70 },
-    { month: "Feb", retention: 5000000, acquisition: 3000000, cx: 100, cy: 50 },
-    { month: "Mar", retention: 4500000, acquisition: 6000000, cx: 170, cy: 55 },
-    { month: "Apr", retention: 7000000, acquisition: 4500000, cx: 240, cy: 30 },
-    { month: "Mei", retention: 8500000, acquisition: 5000000, cx: 310, cy: 15 },
-    { month: "Jun", retention: 9000000, acquisition: 7500000, cx: 380, cy: 10 },
+    { month: "Jan", revenue: 42000000 },
+    { month: "Feb", revenue: 45000000 },
+    { month: "Mar", revenue: 48000000 },
+    { month: "Apr", revenue: 51000000 },
+    { month: "Mei", revenue: 53000000 },
+    { month: "Jun", revenue: 56345980 },
   ];
 
-  // 🎯 State untuk menangani interaksi HOVER (Mirip Tooltip Shadcn)
-  const [hoveredData, setHoveredData] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const revenueChartConfig = {
+    revenue: {
+      label: "Revenue",
+      color: "#D4E34A",
+    },
+  };
 
-  const handleMouseMove = (e, data) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setHoveredData(data);
-    setMousePos({
-      x: e.clientX - rect.left + 15, // posisi pop-up di kanan kursor
-      y: e.clientY - rect.top - 40,  // posisi pop-up di atas kursor
-    });
+  // --- 🍩 CONFIG & DATA RESERVED FOR SHADCN DONUT CHART MEMBERSHIP ---
+  const membershipData = [
+    { tier: "premium", count: premiumCount, fill: "var(--color-premium)" },
+    { tier: "regular", count: regularCount, fill: "var(--color-regular)" },
+  ];
+
+  const membershipChartConfig = {
+    premium: {
+      label: "Premium",
+      color: "#D4E34A",
+    },
+    regular: {
+      label: "Regular",
+      color: "#A8B330",
+    },
   };
 
   return (
-    <div className="p-4 space-y-6 text-gray-800">
+    <div className="p-4 space-y-6">
       <div className="mx-4 space-y-6">
         
         {/* Row 1: StatCards */}
@@ -105,12 +109,10 @@ export default function Home() {
           />
         </div>
 
-        {/* Row 2: Sales & Report */}
+        {/* Row 2: Sales & Report (Aman dari Error Chart) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* AREA CHART CUSTOM: 100% INTERAKTIF TANPA RECHARTS */}
-          <Card className="lg:col-span-2 p-6 flex flex-col justify-between relative select-none">
-            <div className="flex justify-between items-start mb-4">
+          <Card className="lg:col-span-2 p-6 flex flex-col justify-between min-h-[256px]">
+            <div className="flex justify-between items-start mb-6">
               <div>
                 <p className="text-gray-400 text-xs font-medium">Estimasi Revenue Growth CRM (2026)</p>
                 <h3 className="text-2xl font-bold flex items-center gap-2">
@@ -118,122 +120,47 @@ export default function Home() {
                   <Badge className="bg-[#D4E34A] text-black px-2 py-1 rounded-full font-bold text-[10px]">↗ 23.5%</Badge>
                 </h3>
               </div>
-              <div className="flex items-center gap-2 text-[10px] font-bold">
+              <div className="flex items-center gap-4 text-[10px] font-bold">
                 <Badge className="bg-[#D4E34A] text-black">Retention</Badge>
                 <Badge className="bg-[#A8B330] text-black">Acquisition</Badge>
+                <Button className="border border-gray-100 rounded-lg px-3 py-1.5 flex items-center gap-2 text-gray-500 font-medium text-[10px]">
+                  Periode 2026 <span className="text-[8px]">📅</span>
+                </Button>
               </div>
             </div>
-            
-            {/* Tempat Grafik SVG Berada */}
-            <div className="h-56 w-full mt-2 relative border-b border-gray-100">
-              <svg viewBox="0 0 400 100" className="w-full h-full overflow-visible">
-                {/* Garis Bantu Horizontal */}
-                <line x1="0" y1="25" x2="400" y2="25" stroke="#f3f4f6" strokeWidth="0.5" />
-                <line x1="0" y1="50" x2="400" y2="50" stroke="#f3f4f6" strokeWidth="0.5" />
-                <line x1="0" y1="75" x2="400" y2="75" stroke="#f3f4f6" strokeWidth="0.5" />
 
-                {/* Isian Area Grafik (Gradient Fill) */}
-                <path d="M30,70 L100,50 L170,55 L240,30 L310,15 L380,10 L380,100 L30,100 Z" fill="url(#nativeRetentionGrad)" opacity="0.15" />
-                
-                {/* Garis Utama Grafik */}
-                <path d="M30,70 L100,50 L170,55 L240,30 L310,15 L380,10" fill="none" stroke="#D4E34A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                
-                {/* Titik Jangkar Sensor (Bisa Dihover) */}
-                {revenueData.map((d, i) => (
-                  <circle
-                    key={i}
-                    cx={d.cx}
-                    cy={d.cy}
-                    r={hoveredData?.month === d.month ? "6" : "4"}
-                    fill={hoveredData?.month === d.month ? "#fff" : "#D4E34A"}
-                    stroke="#A8B330"
-                    strokeWidth="2"
-                    className="cursor-pointer transition-all duration-150"
-                    onMouseMove={(e) => handleMouseMove(e, d)}
-                    onMouseLeave={() => setHoveredData(null)}
-                  />
-                ))}
-
-                {/* Teks Bulan di Sumbu X */}
-                {revenueData.map((d, i) => (
-                  <text key={i} x={d.cx} y="95" fill="#9ca3af" fontSize="7" textAnchor="middle" className="font-medium">
-                    {d.month}
-                  </text>
-                ))}
-
-                <defs>
-                  <linearGradient id="nativeRetentionGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#D4E34A" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#D4E34A" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              {/* 🔥 KARTU TOOLTIP MELAYANG ALA SHADCN UI YANG AKAN MUNCUL SAAT DIHOVER */}
-              {hoveredData && (
-                <div 
-                  className="absolute pointer-events-none bg-white border border-gray-200 rounded-xl p-3 shadow-xl text-[11px] min-w-[140px] z-50 flex flex-col gap-1 transition-all duration-75 ease-out"
-                  style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px` }}
-                >
-                  <p className="font-bold text-gray-400 mb-1">{hoveredData.month}, 2026</p>
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="flex items-center gap-1.5 text-gray-600">
-                      <span className="w-2 h-2 rounded-full bg-[#D4E34A]"></span>
-                      Retention:
-                    </span>
-                    <span className="font-mono font-bold text-gray-900">Rp {(hoveredData.retention).toLocaleString('id-ID')}</span>
-                  </div>
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="flex items-center gap-1.5 text-gray-600">
-                      <span className="w-2 h-2 rounded-full bg-[#A8B330]"></span>
-                      Acquisition:
-                    </span>
-                    <span className="font-mono font-bold text-gray-900">Rp {(hoveredData.acquisition).toLocaleString('id-ID')}</span>
-                  </div>
-                </div>
-              )}
+            {/* PLACEHOLDER REVENUE CHART AMAN */}
+            <div className="h-40 w-full flex items-center justify-center bg-gray-50 rounded-xl border border-dashed border-gray-200">
+              <span className="text-xs text-gray-400 font-medium tracking-wide">Grafik Pendapatan (Standby)</span>
             </div>
           </Card>
 
-          {/* DONUT CHART SEGMENTATION - INTEGRASI DENGAN chart.jsx */}
+          {/* ChartCard Membership */}
           <ChartCard>
-            <div className="flex justify-between items-center mb-2">
+            <div className="flex justify-between items-center mb-4">
               <h3 className="font-bold text-sm text-gray-800">Bauran Membership</h3>
               <span className="text-[10px] text-gray-400 font-bold uppercase">2026 ∨</span>
             </div>
             
-            <div className="relative flex justify-center items-center h-44">
-              {/* Menggunakan ChartContainer & ChartTooltip yang di-import dari file chart.jsx kamu */}
-              <ChartContainer config={chartConfig} className="h-full w-full max-w-[160px]">
-                <PieChart>
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-                  <Pie
-                    data={[
-                      { name: "Premium", value: premiumCount, fill: "var(--color-premium)" },
-                      { name: "Regular", value: regularCount, fill: "var(--color-regular)" },
-                    ]}
-                    dataKey="value"
-                    nameKey="name"
-                    innerRadius={45}
-                    outerRadius={65}
-                    strokeWidth={4}
-                  >
-                    <Cell fill="var(--color-premium)" />
-                    <Cell fill="var(--color-regular)" />
-                  </Pie>
-                </PieChart>
-              </ChartContainer>
-
-              {/* Teks Persentase Tengah Donut (Tetap berada di tengah secara absolut) */}
-              <div className="absolute text-center pointer-events-none flex flex-col items-center justify-center">
-                <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">Premium</p>
-                <p className="text-2xl font-black text-gray-800">
-                  {totalCustomers > 0 ? Math.round((premiumCount / totalCustomers) * 100) : 0}%
-                </p>
+            {/* PLACEHOLDER DONUT CHART AMAN */}
+            <div className="h-28 w-full flex items-center justify-center bg-gray-50 rounded-xl border border-dashed border-gray-200 mb-2">
+              <div className="text-center">
+                <span className="block text-lg font-black text-gray-700">{premiumPercentage}%</span>
+                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Premium Member</span>
               </div>
             </div>
 
-            <Button className="w-full bg-[#A3B22C] text-white py-3 rounded-2xl font-bold text-sm shadow-lg hover:bg-[#8F9E24] active:scale-95 transition-all">
+            {/* Legenda Warna */}
+            <div className="flex justify-center gap-4 text-[10px] font-semibold mb-4 mt-2">
+              <div className="flex items-center gap-1">
+                <span className="w-2.5 h-2.5 rounded-sm bg-[#D4E34A]" /> Premium ({premiumCount})
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="w-2.5 h-2.5 rounded-sm bg-[#A8B330]" /> Regular ({regularCount})
+              </div>
+            </div>
+
+            <Button className="w-full bg-[#A3B22C] text-white py-3 rounded-2xl font-bold text-sm shadow-lg active:scale-95 transition-all">
               Ekspor Data Member
             </Button>
           </ChartCard>
@@ -268,8 +195,8 @@ export default function Home() {
               ))}
             </div>
           </Card>
-        </div>
 
+        </div>
       </div>
     </div>
   );

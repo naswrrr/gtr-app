@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '../components/Card';
 import CardTitle from '../components/CardTitle';
 import Badge from '../components/Badge';
 import customerData from '../data/customersData.json';
 
-// 🔥 IMPORT MURNI DARI FOLDER UI SHADCN YANG BARU TER-DOWNLOAD
+// --- IMPORT SHADCN TABS & SONNER ---
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Toaster, toast } from "sonner"; // <--- Toaster tetap standby di sini
 
 export default function Payment() {
-  // State baru untuk mengatur munculnya notifikasi otomatis
-  const [showToast, setShowToast] = useState(false);
 
-  // Fungsi trigger saat tombol WA Blast Invoice diklik
+  // 🔥 FUNGSI BARU: Menggunakan Struktur Standard Sonner Shadcn UI
   const handleSendInvoice = () => {
-    setShowToast(true);
-    // Notifikasi otomatis hilang setelah 3 detik
-    setTimeout(() => {
-      setShowToast(false);
-    }, 3000);
+    toast("CRM Automation Success", {
+      description: "Invoice link successfully dispatched to Devon Lane via WhatsApp Bot!",
+      action: {
+        label: "Undo",
+        onClick: () => console.log("Pengiriman invoice dibatalkan (Undo Clicked)"),
+      },
+    });
   };
 
   // Ambil data transaksi secara dinamis dari log interaksi di json
@@ -37,22 +38,12 @@ export default function Payment() {
   return (
     <div className="min-h-screen bg-gray-50 p-4 space-y-6 relative">
       
-      {/* --- POP-UP NOTIFIKASI (TOAST) OTOMATISASI --- */}
-      {showToast && (
-        <div className="fixed top-6 right-6 z-50 transform translate-y-0 transition-all duration-500 animate-bounce">
-          <div className="bg-emerald-600 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-emerald-500">
-            <span className="text-base">🚀</span>
-            <div className="text-left">
-              <p className="text-xs font-black">CRM Automation Success</p>
-              <p className="text-[10px] text-emerald-100 font-medium">Invoice link successfully dispatched to Devon Lane via WhatsApp Bot!</p>
-            </div>
-          </div>
-        </div>
-      )}
-
+      {/* Toaster Provider pasang di atas agar siap menerima trigger */}
+      <Toaster position="top-right" richColors closeButton />
+      
       <div className="mx-4 space-y-6">
         
-        {/* 🛠️ ROOT BUNDLING TABS SHADCN UI (Default awal di set ke 'history') */}
+        {/* 🛠️ ROOT BUNDLING TABS SHADCN UI */}
         <Tabs defaultValue="history" className="w-full space-y-6">
           
           {/* --- SECTION HEADER BILLING --- */}
@@ -60,7 +51,6 @@ export default function Payment() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#A8B330]">FixFlow Finance</p>
             <h1 className="mt-1 text-2xl font-black text-[#1A1C1E]">Billing & Transaction Center</h1>
             
-            {/* CONTAINER LIST TOMBOL SHADCN UI TABS */}
             <div className="mt-4 border-t border-gray-100 pt-4">
               <TabsList className="grid w-full grid-cols-2 md:w-[450px]">
                 <TabsTrigger value="history" className="text-xs font-bold">
@@ -152,7 +142,7 @@ export default function Payment() {
                   </div>
                 </div>
                 
-                {/* Button kirim WA Blast */}
+                {/* 🔥 Tombol Klik ini tetap mengarah ke handleSendInvoice */}
                 <button 
                   onClick={handleSendInvoice}
                   className="mt-6 w-full bg-[#1A1C1E] text-white text-xs font-bold py-3 rounded-2xl shadow-md hover:bg-black active:scale-[0.98] transition-all"
@@ -164,7 +154,6 @@ export default function Payment() {
               {/* QRIS Scan Desk Board */}
               <Card className="p-6 flex flex-col items-center justify-center text-center">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Instant Scan Desk</span>
-                
                 <div className="p-3 bg-white border border-gray-200 rounded-[1.5rem] shadow-xs">
                   <img 
                     src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=FIXFLOW-INVOICE-DEVOALANE-450000" 
@@ -172,7 +161,6 @@ export default function Payment() {
                     className="w-36 h-36"
                   />
                 </div>
-                
                 <p className="text-[11px] font-bold text-gray-800 mt-4">QRIS FIXFLOW SERVICE</p>
                 <p className="text-[9px] text-gray-400 max-w-[180px] mt-1 leading-relaxed">
                   Pelanggan bisa langsung scan barcode di atas via M-Banking atau E-Wallet setelah servis selesai.

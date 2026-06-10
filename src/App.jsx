@@ -6,6 +6,7 @@ import MainLayout from './layouts/MainLayout';
 import AuthLayout from './layouts/AuthLayout';
 import Loading from './components/Loading';
 import NotFound from './components/NotFound';
+import { Toaster } from 'sonner';
 
 // Lazy Loaded Pages yang Baru 
 const Home = lazy(() => import('./pages/Home'));
@@ -23,6 +24,7 @@ const Forgot = lazy(() => import('./pages/auth/Forgot'));
 function App() {
   return (
     <BrowserRouter>
+    <Toaster position="top-right" richColors closeButton />
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route element={<AuthLayout />}>
