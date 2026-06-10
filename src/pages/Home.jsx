@@ -11,6 +11,16 @@ import SummaryBar from '../components/SummaryBar';
 // Integrasi database JSON CRM 
 import customerData from '../data/customersData.json';
 
+// 📊 Import komponen Chart dari shadcn UI milikmu (sesuai struktur folder ui/chart.jsx)
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
+import { Cell, Pie, PieChart } from 'recharts';
+
+// ⚙️ Konfigurasi Tema Warna untuk mengaitkan data dengan css variable di chart.jsx
+const chartConfig = {
+  premium: { label: "Premium Tier", color: "#D4E34A" },
+  regular: { label: "Regular Tier", color: "#A8B330" },
+};
+
 export default function Home() {
   // --- LOGIC INTEGRASI CRM DATA ---
   const totalCustomers = customerData.length;
@@ -185,7 +195,7 @@ export default function Home() {
             </div>
           </Card>
 
-          {/* DONUT CHART SEGMENTATION */}
+          {/* DONUT CHART SEGMENTATION - INTEGRASI DENGAN chart.jsx */}
           <ChartCard>
             <div className="flex justify-between items-center mb-2">
               <h3 className="font-bold text-sm text-gray-800">Bauran Membership</h3>
@@ -193,14 +203,33 @@ export default function Home() {
             </div>
             
             <div className="relative flex justify-center items-center h-44">
-              {/* Mengganti PieChart Recharts dengan Lingkaran CSS Murni */}
-              <div className="w-32 h-32 rounded-full border-[14px] border-[#D4E34A] border-r-[#A8B330] border-b-gray-100 relative flex items-center justify-center animate-spin-slow">
-                <div className="text-center absolute transform rotate-0">
-                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">Premium</p>
-                  <p className="text-xl font-black text-gray-800">
-                    {totalCustomers > 0 ? Math.round((premiumCount / totalCustomers) * 100) : 0}%
-                  </p>
-                </div>
+              {/* Menggunakan ChartContainer & ChartTooltip yang di-import dari file chart.jsx kamu */}
+              <ChartContainer config={chartConfig} className="h-full w-full max-w-[160px]">
+                <PieChart>
+                  <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+                  <Pie
+                    data={[
+                      { name: "Premium", value: premiumCount, fill: "var(--color-premium)" },
+                      { name: "Regular", value: regularCount, fill: "var(--color-regular)" },
+                    ]}
+                    dataKey="value"
+                    nameKey="name"
+                    innerRadius={45}
+                    outerRadius={65}
+                    strokeWidth={4}
+                  >
+                    <Cell fill="var(--color-premium)" />
+                    <Cell fill="var(--color-regular)" />
+                  </Pie>
+                </PieChart>
+              </ChartContainer>
+
+              {/* Teks Persentase Tengah Donut (Tetap berada di tengah secara absolut) */}
+              <div className="absolute text-center pointer-events-none flex flex-col items-center justify-center">
+                <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">Premium</p>
+                <p className="text-2xl font-black text-gray-800">
+                  {totalCustomers > 0 ? Math.round((premiumCount / totalCustomers) * 100) : 0}%
+                </p>
               </div>
             </div>
 
