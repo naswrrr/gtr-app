@@ -4,13 +4,13 @@ export default function Sidebar() {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Dashboard', path: '/', icon: '📊' },
-    { name: 'Customer Management', path: '/customers', icon: '👥' },
-    { name: 'Marketing Automation', path: '/marketing', icon: '📢' },
-    { name: 'Customer Analytics', path: '/analytics', icon: '📈' },
-    { name: 'Feedback & Complaint', path: '/feedback', icon: '⭐' },
-    { name: 'Inventory Stock', path: '/inventory', icon: '📦' },
-    { name: 'Billing & Payment', path: '/payment', icon: '💳' },
+    { name: 'Dashboard', path: '/admin', icon: '📊' },
+    { name: 'Customer Management', path: '/admin/customers', icon: '👥' },
+    { name: 'Marketing Automation', path: '/admin/marketing', icon: '📢' },
+    { name: 'Customer Analytics', path: '/admin/analytics', icon: '📈' },
+    { name: 'Feedback & Complaint', path: '/admin/feedback', icon: '⭐' },
+    { name: 'Inventory Stock', path: '/admin/inventory', icon: '📦' },
+    { name: 'Billing & Payment', path: '/admin/payment', icon: '💳' },
   ];
 
   return (

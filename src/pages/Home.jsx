@@ -11,7 +11,7 @@ import Badge from '../components/Badge';
 import CardTitle from '../components/CardTitle';
 import SummaryBar from '../components/SummaryBar';
 import ChartCard from '../components/ChartCard';
-import StatCard from '../components/StatCard'; 
+import StatCard from '@/components/StatCard';
 
 export default function Home() {
   // --- LOGIC INTEGRASI CRM DATA ---

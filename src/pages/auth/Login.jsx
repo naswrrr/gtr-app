@@ -60,7 +60,7 @@ export default function Login() {
 
       setTimeout(() => {
         setLoading(false);
-        navigate("/");
+        navigate("/admin");
       }, 1000); 
       return; 
     }
@@ -75,7 +75,7 @@ export default function Login() {
       if (response.status === 200) {
         localStorage.setItem("token", response.data.accessToken);
         localStorage.setItem("user", JSON.stringify(response.data));
-        navigate("/");
+        navigate("/admin");
       }
     } catch (err) {
       if (err.response) {
