@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import Avatar from '../components/Avatar';
 import Badge from '../components/Badge';
 import Card from '../components/Card';
@@ -9,6 +9,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function Customers() {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+  const [hoveredEmail, setHoveredEmail] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isDetailLoading, setIsDetailLoading] = useState(false);
   
   // State utama untuk mendeteksi tab filter yang aktif
   const [activeTab, setActiveTab] = useState('overview');
@@ -20,8 +26,25 @@ export default function Customers() {
     return true; // jika 'overview', tampilkan semua data
   });
 
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!selectedCustomer) return;
+    setIsDetailLoading(true);
+    const timer = setTimeout(() => setIsDetailLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, [selectedCustomer]);
+
   return (
     <div className="min-h-screen bg-gray-50 p-4 space-y-6">
+      {isLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/90">
+          <div className="rounded-2xl bg-slate-950 text-white px-6 py-4 text-sm font-bold shadow-lg">Loading halaman...</div>
+        </div>
+      )}
       <div className="mx-4 space-y-6">
         <Card>
           
@@ -103,6 +126,11 @@ export default function Customers() {
       {selectedCustomer && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
           <div className="bg-white rounded-[24px] max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 space-y-6 shadow-2xl relative text-gray-800 text-xs">
+            {isDetailLoading && (
+              <div className="absolute inset-0 z-20 flex items-center justify-center bg-white/80 rounded-[24px]">
+                <div className="rounded-2xl bg-slate-950 text-white px-5 py-3 text-sm font-bold shadow-lg">Memuat detail...</div>
+              </div>
+            )}
             
             {/* Tombol Close Modal */}
             <button 
@@ -116,7 +144,21 @@ export default function Customers() {
             <div className="flex items-center gap-4 border-b border-gray-100 pb-5">
               <img src={`https://i.pravatar.cc/100?u=${selectedCustomer.id}`} className="w-16 h-16 rounded-full border border-gray-100" alt="" />
               <div>
-                <h3 className="text-xl font-black text-gray-900 leading-tight">{selectedCustomer.name}</h3>
+                <h3
+                  ref={nameRef}
+                  onClick={() => {
+                    if (nameRef.current) {
+                      const range = document.createRange();
+                      range.selectNodeContents(nameRef.current);
+                      const sel = window.getSelection();
+                      sel.removeAllRanges();
+                      sel.addRange(range);
+                    }
+                  }}
+                  className="text-xl font-black text-gray-900 leading-tight"
+                >
+                  {selectedCustomer.name}
+                </h3>
                 <p className="text-xs text-gray-500 mt-0.5">
                   ID: <span className="font-mono font-bold text-gray-700">{selectedCustomer.id}</span> | 
                   Username: <span className="font-medium text-gray-700">@{selectedCustomer.username}</span>
@@ -146,7 +188,21 @@ export default function Customers() {
                 <div className="space-y-2">
                   <p className="text-gray-600"><strong>Jenis Kelamin:</strong> <span className="text-gray-900 ml-1">{selectedCustomer.gender || "-"}</span></p>
                   <p className="text-gray-600"><strong>Tanggal Lahir:</strong> <span className="text-gray-900 font-mono ml-1">{selectedCustomer.birthDate || "-"}</span></p>
-                  <p className="text-gray-600"><strong>Email Resmi:</strong> <span className="text-gray-900 font-medium ml-1">{selectedCustomer.email || "-"}</span></p>
+                  <p className="text-gray-600"><strong>Email Resmi:</strong> <span
+                    ref={emailRef}
+                    onMouseEnter={() => setHoveredEmail(true)}
+                    onMouseLeave={() => setHoveredEmail(false)}
+                    onClick={() => {
+                      if (selectedCustomer.email) {
+                        navigator.clipboard.writeText(selectedCustomer.email);
+                        setCopied(true);
+                      }
+                    }}
+                    className="text-blue-600 font-medium ml-1 inline-flex items-center gap-1"
+                  >
+                    {selectedCustomer.email || "-"}
+                    {hoveredEmail && <span className="text-slate-400">📋</span>}
+                  </span></p>
                   <p className="text-gray-600"><strong>No. HP:</strong> <span className="text-gray-900 font-mono font-semibold ml-1">{selectedCustomer.phone || "-"}</span></p>
                   <p className="text-gray-600"><strong>Alamat Domisili:</strong> <span className="text-gray-900 ml-1">{selectedCustomer.location || "-"}</span></p>
                   <p className="text-gray-600"><strong>Media Sosial:</strong> <span className="text-blue-600 font-medium ml-1">{selectedCustomer.socialMedia || "-"}</span></p>

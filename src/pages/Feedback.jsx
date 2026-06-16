@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import CardTitle from '../components/CardTitle';
 import StatusBadge from '../components/StatusBadge';
@@ -11,6 +11,9 @@ export default function Feedback() {
     .slice(0, 4); // Mengambil 4 contoh ulasan teratas untuk display grid
 
   // 2. Ambil data komplain dari log interaksi di dalam file JSON
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedClientIds, setSelectedClientIds] = useState([]);
+
   const complaintsList = customerData
     .filter(c => c.interactions && c.interactions.length > 0)
     .slice(0, 4)
@@ -22,6 +25,25 @@ export default function Feedback() {
       status: index % 3 === 0 ? 'Menunggu' : 'Selesai'
     }));
 
+  const filteredComplaints = complaintsList.filter(ticket =>
+    ticket.customerName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  useEffect(() => {
+    const saved = localStorage.getItem('selectedClientIds');
+    if (saved) {
+      try {
+        setSelectedClientIds(JSON.parse(saved));
+      } catch (error) {
+        setSelectedClientIds([]);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('selectedClientIds', JSON.stringify(selectedClientIds));
+  }, [selectedClientIds]);
+
   return (
     <div className="min-h-screen bg-gray-50 p-4 space-y-6">
       <div className="mx-4 space-y-6">
@@ -32,11 +54,20 @@ export default function Feedback() {
           <p className="text-xs text-gray-500 -mt-2 mb-4">
             Daftar keluhan masuk dari pelanggan pasca pengerjaan reparasi. Admin dapat memantau status penyelesaian masalah di sini.
           </p>
-          
+          <div className="mb-4">
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Cari customer"
+              className="w-full text-xs border border-gray-100 rounded-xl px-3 py-2 bg-white text-gray-700"
+            />
+          </div>
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-left text-xs font-medium text-gray-700">
               <thead>
                 <tr className="text-gray-400 uppercase border-b border-gray-100 text-[10px] tracking-wider">
+                  <th className="pb-3"></th>
                   <th className="pb-3">Customer Name</th>
                   <th className="pb-3">Keluhan / Log Kendala</th>
                   <th className="pb-3">Tanggal Masuk</th>
@@ -44,8 +75,24 @@ export default function Feedback() {
                 </tr>
               </thead>
               <tbody>
-                {complaintsList.map((ticket, index) => (
-                  <tr key={index} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                {filteredComplaints.map((ticket, index) => (
+                  <tr key={ticket.customerName} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                    <td className="py-4">
+                      <input
+                        type="checkbox"
+                        checked={selectedClientIds.includes(ticket.customerName)}
+                        onChange={() => {
+                          setSelectedClientIds(prev => {
+                            const exists = prev.includes(ticket.customerName);
+                            if (exists) {
+                              return prev.filter(id => id !== ticket.customerName);
+                            }
+                            return [...prev, ticket.customerName];
+                          });
+                        }}
+                        className="h-4 w-4 text-slate-900 border-gray-200 rounded"
+                      />
+                    </td>
                     <td className="py-4 font-bold text-gray-900">{ticket.customerName}</td>
                     <td className="py-4 text-gray-600 max-w-xs md:max-w-md truncate">{ticket.issue}</td>
                     <td className="py-4 text-gray-400 font-mono">{ticket.date}</td>
