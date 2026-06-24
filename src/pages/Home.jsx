@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // 📦 Integrasi Database JSON CRM 
 import customerData from '../data/customersData.json';
@@ -13,7 +14,39 @@ import SummaryBar from '../components/SummaryBar';
 import ChartCard from '../components/ChartCard';
 import StatCard from '@/components/StatCard';
 
+function getCurrentAccount() {
+  try {
+    const rawUser = localStorage.getItem('user');
+    if (rawUser) {
+      return JSON.parse(rawUser);
+    }
+
+    const rawLoggedUser = localStorage.getItem('loggedUser');
+    if (rawLoggedUser) {
+      return JSON.parse(rawLoggedUser);
+    }
+  } catch (error) {
+    console.error('Failed to parse auth user data', error);
+  }
+
+  return null;
+}
+
 export default function Home() {
+  const navigate = useNavigate();
+  const currentAccount = getCurrentAccount();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loggedUser');
+    navigate('/login', { replace: true });
+  };
+
+  const displayName = currentAccount?.firstName || currentAccount?.username || currentAccount?.name || currentAccount?.workshopName || 'Admin';
+  const roleLabel = currentAccount?.role || 'Admin';
+  const emailLabel = currentAccount?.email || currentAccount?.username || 'admin@fixflow.com';
+
   // --- LOGIC INTEGRASI CRM DATA ---
   const totalCustomers = customerData.length;
   const premiumCount = customerData.filter(c => c.tier === 'Premium').length;
@@ -80,6 +113,21 @@ export default function Home() {
   return (
     <div className="p-4 space-y-6">
       <div className="mx-4 space-y-6">
+        <Card className="overflow-hidden border border-gray-100 bg-gradient-to-r from-[#1A1C1E] via-[#24262a] to-[#1A1C1E] p-6 text-white">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#D4E34A]">Akun aktif</p>
+              <h2 className="mt-2 text-2xl font-bold">Selamat datang, {displayName}</h2>
+              <p className="mt-2 text-sm text-white/70">{roleLabel} • {emailLabel}</p>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
+            >
+              Logout
+            </button>
+          </div>
+        </Card>
         
         {/* Row 1: StatCards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -40,6 +40,18 @@ const CustomerVouchers = lazy(() => import('./pages/customer/Vouchers'));
 const History = lazy(() => import('./pages/customer/History'));
 const Journey = lazy(() => import('./pages/customer/Journey'));
 
+function ProtectedAdminRoute() {
+  const token = localStorage.getItem('token');
+  const user = localStorage.getItem('user');
+  const loggedUser = localStorage.getItem('loggedUser');
+  const isLoggedIn = Boolean(token || user || loggedUser);
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return <MainLayout />;
+}
 
 function App() {
   return (
@@ -56,7 +68,7 @@ function App() {
             </Route>
 
             {/* ADMIN ROUTES */}
-            <Route path="/admin" element={<MainLayout />}>
+            <Route path="/admin" element={<ProtectedAdminRoute />}>
               <Route index element={<Home />} />
               <Route path="customers" element={<Customers />} />
               <Route path="marketing" element={<Marketing />} />

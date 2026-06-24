@@ -31,7 +31,7 @@ export default function Register() {
     if (error) setError(''); // Reset error ketika user mengetik ulang
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     // Validasi apakah password dan confirm password cocok
@@ -43,41 +43,35 @@ export default function Register() {
     setIsSubmitting(true);
 
     try {
-      // PERBAIKAN: String dinamis menggunakan backtick (`) yang benar
-      const newUser = {
-        id: `CUST-${Math.floor(100 + Math.random() * 900)}`,
-        name: formData.name,
-        username: formData.email.split('@')[0], // Generate username otomatis dari email
-        gender: "Laki-laki", 
-        birthDate: "1997-09-25",
-        email: formData.email,
-        password: formData.password, 
-        phone: formData.phone,
-        location: "East Jill, GD",
-        socialMedia: `@${formData.email.split('@')[0]}`,
-        joinDate: new Date().toISOString().split('T')[0], 
-        status: 'Active',
-        tier: 'Regular',
-        referralCode: `${formData.name.substring(0, 3).toUpperCase()}FIX01`,
-        orders: 0,
-        spent: '$0.00',
-        source: 'Brosur Bengkel',
-        campaignsJoined: [],
-        lastLogin: new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }),
-        device: 'Web Browser',
-        stampsCount: 0,
-        interactions: [],
-        feedback: {
-          rating: 0,
-          review: ''
-        }
-      };
+      const SUPABASE_URL = "https://rgbguwjmttvlvosjoinx.supabase.co/rest/v1";
+      const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnYmd1d2ptdHR2bHZvc2pvaW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyOTEzMzcsImV4cCI6MjA5Nzg2NzMzN30.559Kc9lhJL6lsf8BLUqaWpg7OwzEE9V9bdv-9x8VtSM";
 
-      // Simpan ke localStorage untuk kebutuhan auth login
-      localStorage.setItem('registeredUser', JSON.stringify(newUser));
+      const response = await fetch(`${SUPABASE_URL}/user_profile`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`,
+          'Prefer': 'return=minimal' // Untuk Supabase, 'return=minimal' mempercepat POST tanpa load seluruh data baris baru
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          username: formData.name, // Memasukkan "Nama Lengkap" ke kolom username DB
+          NoHp: formData.phone,    // Memasukkan "No. Telepon" ke kolom NoHp DB
+          role: 'user'             // Set role default "user"
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Gagal melakukan pendaftaran ke database.");
+      }
 
       alert('Pendaftaran Berhasil! Silakan Login.');
       navigate('/login');
+    } catch (err) {
+      setError(err.message || 'Gagal terhubung ke server.');
     } finally {
       setIsSubmitting(false);
     }

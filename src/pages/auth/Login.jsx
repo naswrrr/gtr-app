@@ -30,51 +30,67 @@ export default function Login() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    // 1. Ambil data dari register (jika ada)
-    const savedUser = JSON.parse(localStorage.getItem("registeredUser"));
+    try {
+      // Supabase credentials
+      const SUPABASE_URL = "https://rgbguwjmttvlvosjoinx.supabase.co/rest/v1";
+      const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnYmd1d2ptdHR2bHZvc2pvaW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyOTEzMzcsImV4cCI6MjA5Nzg2NzMzN30.559Kc9lhJL6lsf8BLUqaWpg7OwzEE9V9bdv-9x8VtSM";
 
-    // 2. Akun default untuk demo dosen
-    const defaultUser = {
-      email: "admin@fixflow.com",
-      password: "password123",
-      name: "FixFlow Pusat"
-    };
+      const response = await fetch(`${SUPABASE_URL}/user_profile?email=eq.${dataForm.username}&password=eq.${dataForm.password}&select=*`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_KEY,
+          'Authorization': `Bearer ${SUPABASE_KEY}`
+        }
+      });
 
-    // 3. Prioritaskan cek ke akun register, kalau tidak ada pakai akun default
-    // Tapi jika user mengetik 'admin@fixflow.com', langsung arahkan ke defaultUser
-    const isDefaultAdmin = dataForm.username === defaultUser.email;
-    const userToValidate = (isDefaultAdmin ? defaultUser : savedUser) || defaultUser;
+      if (!response.ok) {
+        throw new Error("Gagal terhubung ke server database.");
+      }
 
-    const validEmail = userToValidate.email;
-    const validPassword = userToValidate.password;
+      const data = await response.json();
 
-    // 4. Jalankan pengecekan kecocokan data
-    if (dataForm.username === validEmail && dataForm.password === validPassword) {
-      const fakeResponse = {
-        accessToken: "simulated-token-for-" + validEmail,
-        username: validEmail.split('@')[0],
-        firstName: userToValidate.name || "User Admin",
-        image: "https://robohash.org/set_set4/user.png"
-      };
+      // Cek apakah data user ditemukan
+      if (data && data.length > 0) {
+        const user = data[0];
+        
+        // Buat fake response mirip seperti sebelumnya agar tidak merusak komponen lain yang bergantung pada format ini
+        const fakeResponse = {
+          accessToken: "supabase-session-" + user.id,
+          username: user.username,
+          firstName: user.username, // Gunakan username sebagai nama panggilan
+          role: user.role || "admin",
+          image: "https://robohash.org/set_set4/user.png"
+        };
 
-      // Simpan data login ke localStorage
-      localStorage.setItem("token", fakeResponse.accessToken);
-      localStorage.setItem("user", JSON.stringify(fakeResponse));
+        // Simpan data login ke localStorage
+        localStorage.setItem("token", fakeResponse.accessToken);
+        localStorage.setItem("user", JSON.stringify(fakeResponse));
+        
+        // Simpan raw data user jika ada fitur yang butuh loggedUser khusus
+        localStorage.setItem("loggedUser", JSON.stringify(user));
 
+        setTimeout(() => {
+          setLoading(false);
+          navigate('/admin');
+        }, 1000); 
+
+      } else {
+        setTimeout(() => {
+          setLoading(false);
+          setError("Email atau Password salah! Periksa kembali data Anda.");
+        }, 800);
+      }
+
+    } catch (err) {
       setTimeout(() => {
         setLoading(false);
-        navigate("/admin");
-      }, 1000); 
-    } else {
-      // Jika salah, langsung set error lokal tanpa lempar ke API DummyJSON
-      setTimeout(() => {
-        setLoading(false);
-        setError("Email atau Password salah! Periksa kembali data Anda.");
+        setError(err.message || "Gagal terhubung ke server.");
       }, 800);
     }
   };
@@ -138,7 +154,7 @@ export default function Login() {
 
           {error && (
             <div className="bg-red-50 mb-6 p-4 text-sm text-red-700 rounded-2xl flex items-center border border-red-200 shadow-sm">
-              <BsFillExclamationDiamondFill className="me-3 text-xl flex-shrink-0" />
+              <BsFillExclamationDiamondFill className="me-3 text-xl shrink-0" />
               <span className="font-medium">{error}</span>
             </div>
           )}
@@ -188,28 +204,29 @@ export default function Login() {
             {/* 💡 MINI BANNER AKUN QUICK FILL */}
             <div className="p-3.5 rounded-2xl bg-gray-50 border border-gray-100 flex justify-between items-center shadow-inner">
               <div className="text-[11px] text-gray-500 font-medium leading-relaxed">
-                <p className="text-[#A8B330] font-bold flex items-center gap-1">💡 Akun Demo Default:</p>
+                <p className="font-bold flex items-center gap-1" style={{ color: '#A8B330' }}>💡 Akun Demo Default:</p>
                 <p>Email: <span className="font-semibold text-gray-700">admin@fixflow.com</span></p>
                 <p>Pass: <span className="font-semibold text-gray-700">password123</span></p>
               </div>
               <button 
                 type="button" 
                 onClick={handleQuickLogin}
-                className="text-xs bg-[#1A1C1E] text-white px-3 py-1.5 rounded-xl font-bold hover:bg-black transition-all shadow-md active:scale-95"
+                className="text-xs px-3 py-1.5 rounded-xl font-bold hover:bg-black transition-all shadow-md active:scale-95"
+                style={{ backgroundColor: '#1A1C1E', color: '#fff' }}
               >
                 ⚡ Auto Fill
               </button>
             </div>
 
             <div className="flex items-center justify-between text-sm pt-1">
-              <label className="flex items-center gap-2.5 cursor-pointer text-[#1A1C1E] font-medium selection:bg-transparent">
+              <label className="flex items-center gap-2.5 cursor-pointer font-medium selection:bg-transparent" style={{ color: '#1A1C1E' }}>
                 <input
                   type="checkbox"
                   className="accent-[#D4E34A] w-4 h-4 rounded border-gray-300 focus:ring-0"
                 />
                 Ingat saya
               </label>
-              <Link to="/forgot" className="text-[#A8B330] font-bold hover:underline">
+              <Link to="/forgot" className="font-bold hover:underline" style={{ color: '#A8B330' }}>
                 Lupa Password?
               </Link>
             </div>
@@ -218,7 +235,8 @@ export default function Login() {
             <button
               disabled={loading}
               type="submit"
-              className="w-full flex justify-center items-center rounded-2xl bg-[#D4E34A] py-4 font-black text-[#1A1C1E] shadow-lg shadow-[#D4E34A]/20 transition-all hover:bg-[#c5d43e] active:scale-[0.99] disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="w-full flex justify-center items-center rounded-2xl py-4 font-black shadow-lg shadow-[#D4E34A]/20 transition-all hover:bg-[#c5d43e] active:scale-[0.99] disabled:bg-gray-300 disabled:cursor-not-allowed"
+              style={{ backgroundColor: '#D4E34A', color: '#1A1C1E' }}
             >
               {loading ? (
                 <ImSpinner2 className="animate-spin text-xl" />
@@ -229,25 +247,27 @@ export default function Login() {
 
             {/* Pembatas Or */}
             <div className="relative py-2 flex items-center">
-              <div className="flex-grow border-t border-gray-100"></div>
+              <div className="grow border-t border-gray-100"></div>
               <span className="px-4 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
                 Atau masuk dengan
               </span>
-              <div className="flex-grow border-t border-gray-100"></div>
+              <div className="grow border-t border-gray-100"></div>
             </div>
 
             {/* OAuth Buttons */}
             <div className="grid grid-cols-2 gap-4">
               <button
                 type="button"
-                className="flex items-center justify-center gap-2 border border-gray-200 py-3 rounded-2xl hover:bg-slate-50 font-bold text-sm text-[#1A1C1E] transition-all"
+                className="flex items-center justify-center gap-2 border border-gray-200 py-3 rounded-2xl hover:bg-slate-50 font-bold text-sm transition-all"
+                style={{ color: '#1A1C1E' }}
               >
                 <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="w-5 h-5" alt="Google" />
                 Google
               </button>
               <button
                 type="button"
-                className="flex items-center justify-center gap-2 border border-gray-200 py-3 rounded-2xl hover:bg-slate-50 font-bold text-sm text-[#1A1C1E] transition-all"
+                className="flex items-center justify-center gap-2 border border-gray-200 py-3 rounded-2xl hover:bg-slate-50 font-bold text-sm transition-all"
+                style={{ color: '#1A1C1E' }}
               >
                 <img src="https://www.svgrepo.com/show/475633/apple-color.svg" className="w-5 h-5" alt="Apple" />
                 Apple
@@ -257,7 +277,7 @@ export default function Login() {
 
           <div className="mt-10 rounded-2xl border border-gray-100 bg-gray-50/50 px-4 py-3.5 text-center text-sm text-slate-500 font-medium">
             Belum memiliki akun?{" "}
-            <Link to="/register" className="font-bold text-[#A8B330] hover:underline">
+            <Link to="/register" className="font-bold hover:underline" style={{ color: '#A8B330' }}>
               Daftar Sekarang
             </Link>
           </div>

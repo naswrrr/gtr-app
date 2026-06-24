@@ -11,7 +11,7 @@ export default function FloatingHelp() {
         <div className="mb-4 w-80 rounded-[2rem] border border-gray-200 bg-white p-5 shadow-2xl transition-all duration-300">
           {/* Header Pop-up */}
           <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-            <h3 className="font-black text-sm text-[#1A1C1E]">Tanya Tim PMB FixFlow</h3>
+            <h3 className="font-black text-sm text-[#1A1C1E]">Tanya Tim FixFlow</h3>
             <button 
               onClick={() => { setIsOpen(false); setActiveTab(null); }}
               className="text-gray-400 hover:text-black font-bold text-sm"

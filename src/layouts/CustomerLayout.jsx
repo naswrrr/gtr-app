@@ -7,6 +7,7 @@ import {
   ChevronDown, Search, Menu, X, ArrowUpRight, ShieldCheck, LogOut
 } from 'lucide-react';
 import { toast } from 'sonner';
+import FloatingHelp from '../components/FloatingHelp';
 
 export default function CustomerLayout() {
   const { currentCustomer, customers, selectCustomer, notifications, isCustomerLoggedIn, logoutCustomer } = useCustomer();
@@ -50,19 +51,6 @@ export default function CustomerLayout() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-800">
-      
-      {/* --- AUTOMATION SIMULATOR ALERT BANNER --- */}
-      <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white text-xs px-4 py-2 flex items-center justify-between shadow-sm z-50">
-        <div className="flex items-center gap-2">
-          <span className="bg-white/20 px-2 py-0.5 rounded font-bold uppercase tracking-wider text-[9px]">Simulator Mode</span>
-          <span>Anda sedang melihat sisi <strong>Customer Portal</strong>. Ubah profil customer untuk mensimulasikan data CRM.</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <Link to="/admin" className="underline hover:text-amber-100 font-bold flex items-center gap-1">
-            Kembali ke Admin Panel <ArrowUpRight className="w-3 h-3" />
-          </Link>
-        </div>
-      </div>
 
       {/* --- HEADER NAVBAR --- */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
@@ -364,6 +352,8 @@ export default function CustomerLayout() {
           </main>
         )}
       </div>
+
+      <FloatingHelp />
 
       {/* --- FOOTER SECTION --- */}
       <footer className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">

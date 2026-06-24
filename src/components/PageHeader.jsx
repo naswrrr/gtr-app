@@ -1,12 +1,45 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function getCurrentAccount() {
+  try {
+    const rawUser = localStorage.getItem('user');
+    if (rawUser) {
+      return JSON.parse(rawUser);
+    }
+
+    const rawLoggedUser = localStorage.getItem('loggedUser');
+    if (rawLoggedUser) {
+      return JSON.parse(rawLoggedUser);
+    }
+  } catch (error) {
+    console.error('Failed to parse auth user data', error);
+  }
+
+  return null;
+}
 
 export default function PageHeader() {
+  const navigate = useNavigate();
+  const currentAccount = getCurrentAccount();
+
+  const displayName = currentAccount?.firstName || currentAccount?.username || currentAccount?.name || currentAccount?.workshopName || 'Admin';
+  const roleLabel = currentAccount?.role || 'Owner';
+  const emailLabel = currentAccount?.email || currentAccount?.username || 'admin@fixflow.com';
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loggedUser');
+    navigate('/login', { replace: true });
+  };
+
   return (
     <header className="flex items-center justify-between px-10 py-4 bg-white sticky top-0 z-50">
       {/* Left Section: Greeting */}
       <div className="flex flex-col">
-        <h1 className="text-xl font-bold text-[#1A1C1E] leading-tight">Hi, Cody Fisher</h1>
-        <p className="text-[11px] text-gray-400 font-medium">Let's check your Garage today</p>
+        <h1 className="text-xl font-bold text-[#1A1C1E] leading-tight">Hi, {displayName}</h1>
+        <p className="text-[11px] text-gray-400 font-medium">{emailLabel}</p>
       </div>
 
       {/* Middle Section: Search Bar */}
@@ -50,16 +83,21 @@ export default function PageHeader() {
 
         {/* Profile */}
         <div className="flex items-center gap-3 ml-2">
-          <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" 
-            alt="Profile" 
-            className="w-10 h-10 rounded-full object-cover shadow-sm ring-1 ring-gray-100"
-          />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D4E34A] text-sm font-bold text-[#1A1C1E] shadow-sm">
+            {displayName.charAt(0).toUpperCase()}
+          </div>
           <div className="flex flex-col">
-            <span className="text-[13px] font-bold text-[#1A1C1E] leading-tight">Cody Fisher</span>
-            <span className="text-[10px] text-gray-400 font-medium">Owner</span>
+            <span className="text-[13px] font-bold text-[#1A1C1E] leading-tight">{displayName}</span>
+            <span className="text-[10px] text-gray-400 font-medium">{roleLabel}</span>
           </div>
         </div>
+
+        <button
+          onClick={handleLogout}
+          className="rounded-full border border-gray-200 px-3 py-2 text-[11px] font-semibold text-gray-600 transition hover:border-[#D4E34A] hover:bg-[#F8FBE8] hover:text-[#1A1C1E]"
+        >
+          Logout
+        </button>
       </div>
     </header>
   );
