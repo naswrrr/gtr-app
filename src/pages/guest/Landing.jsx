@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCustomer } from '../../context/CustomerContext';
 import { 
   Calendar, Wrench, Shield, CheckCircle, Star, Sparkles, 
-  ArrowRight, Users, Award, TrendingUp, ChevronRight, Copy, Check
+  ArrowRight, Users, Award, TrendingUp, ChevronRight, Copy, Check,
+  UserPlus, PlayCircle, ClipboardCheck, Zap
 } from 'lucide-react';
 
 export default function Landing() {
@@ -79,17 +80,17 @@ export default function Landing() {
 
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
-                to="/customer/booking"
+                to="/register"
                 className="bg-[#D4E34A] text-slate-950 font-bold px-8 py-4 rounded-2xl hover:bg-[#C5D33A] hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-[#D4E34A]/20 flex items-center gap-2 text-sm"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Booking Servis Online</span>
+                <UserPlus className="w-4 h-4" />
+                <span>Daftar Gratis Sekarang</span>
               </Link>
               <Link
-                to="/layanan"
+                to="/login"
                 className="bg-slate-900 border border-slate-800 text-white font-bold px-8 py-4 rounded-2xl hover:bg-slate-800 hover:text-white transition-all flex items-center gap-2 text-sm"
               >
-                <span>Lihat Layanan</span>
+                <span>Masuk ke Akun</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -387,6 +388,206 @@ export default function Landing() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* --- CARA KERJA / HOW IT WORKS --- */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-3 max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-black text-[#A8B330] uppercase tracking-wider">Mudah & Cepat</span>
+            <h2 className="text-3xl font-black tracking-tight text-slate-950">Cara Kerja FixFlow</h2>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Mulai dari mendaftar hingga kendaraan Anda selesai diservis — semua hanya dalam 3 langkah sederhana.
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Connector line (desktop only) */}
+            <div className="hidden lg:block absolute top-[52px] left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-0.5 bg-gradient-to-r from-[#D4E34A] via-slate-200 to-[#D4E34A]" />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative z-10">
+              {/* Step 1 */}
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="relative">
+                  <div className="w-24 h-24 rounded-3xl bg-[#D4E34A] flex items-center justify-center shadow-lg shadow-[#D4E34A]/30">
+                    <UserPlus className="w-10 h-10 text-slate-950" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-slate-950 text-white text-xs font-black flex items-center justify-center border-2 border-white shadow-sm">
+                    1
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-black text-slate-900 text-lg">Daftar Akun Member</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed max-w-xs mx-auto">
+                    Buat akun member FixFlow secara gratis. Lengkapi profil kendaraan Anda dan dapatkan voucher selamat datang senilai Rp 50.000.
+                  </p>
+                </div>
+                <Link
+                  to="/register"
+                  className="text-xs font-bold text-[#A8B330] hover:underline flex items-center gap-1"
+                >
+                  Daftar Sekarang <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="relative">
+                  <div className="w-24 h-24 rounded-3xl bg-slate-900 flex items-center justify-center shadow-lg">
+                    <ClipboardCheck className="w-10 h-10 text-[#D4E34A]" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-[#D4E34A] text-slate-950 text-xs font-black flex items-center justify-center border-2 border-white shadow-sm">
+                    2
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-black text-slate-900 text-lg">Booking Servis Online</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed max-w-xs mx-auto">
+                    Pilih jenis layanan, pilih jadwal yang tersedia, dan konfirmasi booking hanya dalam hitungan menit. Tidak perlu antre di bengkel.
+                  </p>
+                </div>
+                <Link
+                  to="/customer/booking"
+                  className="text-xs font-bold text-[#A8B330] hover:underline flex items-center gap-1"
+                >
+                  Lihat Jadwal <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              {/* Step 3 */}
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="relative">
+                  <div className="w-24 h-24 rounded-3xl bg-slate-100 border-2 border-slate-200 flex items-center justify-center shadow-sm">
+                    <Zap className="w-10 h-10 text-[#A8B330]" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-slate-900 text-white text-xs font-black flex items-center justify-center border-2 border-white shadow-sm">
+                    3
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-black text-slate-900 text-lg">Pantau & Kumpulkan Poin</h3>
+                  <p className="text-slate-400 text-xs leading-relaxed max-w-xs mx-auto">
+                    Pantau status servis secara real-time via dashboard. Setiap transaksi memberikan Loyalty Poin yang bisa ditukarkan dengan diskon atau layanan gratis.
+                  </p>
+                </div>
+                <Link
+                  to="/customer/loyalty"
+                  className="text-xs font-bold text-[#A8B330] hover:underline flex items-center gap-1"
+                >
+                  Lihat Program Loyalitas <ChevronRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- PAKET MEMBER / PRICING --- */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-3 max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-black text-[#A8B330] uppercase tracking-wider">Pilih Paket Anda</span>
+            <h2 className="text-3xl font-black tracking-tight text-slate-950">Paket Keanggotaan Member</h2>
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Bergabunglah sebagai member FixFlow dan nikmati berbagai keuntungan eksklusif yang dirancang untuk menghemat waktu dan biaya servis Anda.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {/* Paket Basic */}
+            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col space-y-6 hover:shadow-md transition-shadow">
+              <div>
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-3">Paket Basic</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-4xl font-black text-slate-950">Gratis</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-2">Untuk pelanggan baru yang ingin merasakan layanan FixFlow.</p>
+              </div>
+              <ul className="space-y-3 flex-1">
+                {['Akses dashboard member', 'Booking servis online', 'Riwayat servis digital', 'Notifikasi servis via WA', 'Voucher selamat datang Rp 50rb'].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-xs text-slate-600">
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/register"
+                className="w-full text-center bg-white border border-slate-300 text-slate-900 font-bold py-3 rounded-2xl hover:bg-slate-100 transition-all text-sm"
+              >
+                Daftar Gratis
+              </Link>
+            </div>
+
+            {/* Paket Premium (highlighted) */}
+            <div className="bg-slate-950 rounded-3xl p-8 border border-slate-900 flex flex-col space-y-6 shadow-2xl shadow-slate-950/20 relative overflow-hidden">
+              <div className="absolute top-4 right-4 bg-[#D4E34A] text-slate-950 text-[9px] font-black uppercase px-2.5 py-1 rounded-full">
+                Terpopuler
+              </div>
+              <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-[#D4E34A]/10 rounded-full blur-3xl" />
+              <div className="relative z-10">
+                <span className="text-[10px] font-black text-[#D4E34A] uppercase tracking-widest block mb-3">Paket Premium</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-4xl font-black text-white">Rp 99rb</span>
+                  <span className="text-slate-400 text-xs mb-1.5">/bulan</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-2">Untuk pelanggan setia yang ingin keuntungan maksimal.</p>
+              </div>
+              <ul className="space-y-3 flex-1 relative z-10">
+                {[
+                  'Semua fitur Basic',
+                  'Poin loyalitas 2x lipat',
+                  'Prioritas antrian servis',
+                  'Diskon sparepart hingga 10%',
+                  'Garansi servis diperpanjang',
+                  'Laporan kesehatan kendaraan bulanan',
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-xs text-slate-300">
+                    <CheckCircle className="w-4 h-4 text-[#D4E34A] shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/register"
+                className="w-full text-center bg-[#D4E34A] text-slate-950 font-bold py-3 rounded-2xl hover:bg-[#C5D33A] transition-all text-sm relative z-10"
+              >
+                Mulai Premium
+              </Link>
+            </div>
+
+            {/* Paket Bisnis */}
+            <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col space-y-6 hover:shadow-md transition-shadow">
+              <div>
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-3">Paket Bisnis</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-4xl font-black text-slate-950">Custom</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-2">Untuk armada kendaraan perusahaan dengan kebutuhan khusus.</p>
+              </div>
+              <ul className="space-y-3 flex-1">
+                {[
+                  'Semua fitur Premium',
+                  'Manajemen multi-kendaraan',
+                  'Laporan bulanan armada',
+                  'Account Manager dedicared',
+                  'Integrasi API & invoice',
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-xs text-slate-600">
+                    <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="mailto:support@fixflow.co.id"
+                className="w-full text-center bg-white border border-slate-300 text-slate-900 font-bold py-3 rounded-2xl hover:bg-slate-100 transition-all text-sm"
+              >
+                Hubungi Kami
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
