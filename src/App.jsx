@@ -42,12 +42,21 @@ const Journey = lazy(() => import('./pages/customer/Journey'));
 
 function ProtectedAdminRoute() {
   const token = localStorage.getItem('token');
-  const user = localStorage.getItem('user');
-  const loggedUser = localStorage.getItem('loggedUser');
-  const isLoggedIn = Boolean(token || user || loggedUser);
+  const userStr = localStorage.getItem('user');
+  
+  let user = null;
+  try {
+    if (userStr) user = JSON.parse(userStr);
+  } catch(e) {}
+
+  const isLoggedIn = Boolean(token && user);
 
   if (!isLoggedIn) {
     return <Navigate to="/login" replace />;
+  }
+
+  if (user.role !== 'admin') {
+    return <Navigate to="/customer/dashboard" replace />;
   }
 
   return <MainLayout />;
@@ -63,6 +72,8 @@ function App() {
             {/* AUTH ROUTES */}
             <Route element={<AuthLayout />}>
               <Route path="login" element={<Login />} />
+              <Route path="login/admin" element={<Navigate to="/login" replace />} />
+              <Route path="login/member" element={<Navigate to="/login" replace />} />
               <Route path="register" element={<Register />} />
               <Route path="forgot" element={<Forgot />} />
             </Route>
@@ -90,7 +101,7 @@ function App() {
               <Route path="promo" element={<Promos />} />
               
               {/* Customer Area Pages */}
-              <Route path="customer/login" element={<CustomerLogin />} />
+              <Route path="customer/login" element={<Navigate to="/login" replace />} />
               <Route path="customer/dashboard" element={<CustomerDashboard />} />
               <Route path="customer/booking" element={<Booking />} />
               <Route path="customer/tracking" element={<Tracking />} />

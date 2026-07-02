@@ -11,6 +11,7 @@ import {
   User
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { supabase } from '../../lib/supabase';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -43,29 +44,20 @@ export default function Register() {
     setIsSubmitting(true);
 
     try {
-      const SUPABASE_URL = "https://rgbguwjmttvlvosjoinx.supabase.co/rest/v1";
-      const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnYmd1d2ptdHR2bHZvc2pvaW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyOTEzMzcsImV4cCI6MjA5Nzg2NzMzN30.559Kc9lhJL6lsf8BLUqaWpg7OwzEE9V9bdv-9x8VtSM";
-
-      const response = await fetch(`${SUPABASE_URL}/user_profile`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_KEY,
-          'Authorization': `Bearer ${SUPABASE_KEY}`,
-          'Prefer': 'return=minimal' // Untuk Supabase, 'return=minimal' mempercepat POST tanpa load seluruh data baris baru
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-          username: formData.name, // Memasukkan "Nama Lengkap" ke kolom username DB
-          NoHp: formData.phone,    // Memasukkan "No. Telepon" ke kolom NoHp DB
-          role: 'user'             // Set role default "user"
-        })
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            username: formData.name,
+            NoHp: formData.phone,
+            role: 'user'
+          }
+        }
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Gagal melakukan pendaftaran ke database.");
+      if (signUpError) {
+        throw new Error(signUpError.message || "Gagal melakukan pendaftaran ke database.");
       }
 
       alert('Pendaftaran Berhasil! Silakan Login.');

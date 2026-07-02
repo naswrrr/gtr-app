@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BsFillExclamationDiamondFill } from "react-icons/bs";
 import { ImSpinner2 } from "react-icons/im";
 import { Wrench, CheckCircle2, Mail, Lock, Eye, EyeOff } from "lucide-react";
+import { supabase } from '../../lib/supabase';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -36,56 +37,60 @@ export default function Login() {
     setError("");
 
     try {
-      // Supabase credentials
-      const SUPABASE_URL = "https://rgbguwjmttvlvosjoinx.supabase.co/rest/v1";
-      const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJnYmd1d2ptdHR2bHZvc2pvaW54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyOTEzMzcsImV4cCI6MjA5Nzg2NzMzN30.559Kc9lhJL6lsf8BLUqaWpg7OwzEE9V9bdv-9x8VtSM";
-
-      const response = await fetch(`${SUPABASE_URL}/user_profile?email=eq.${dataForm.username}&password=eq.${dataForm.password}&select=*`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_KEY,
-          'Authorization': `Bearer ${SUPABASE_KEY}`
-        }
+      // ✅ STEP 1: Autentikasi via Supabase Native Auth
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+        email: dataForm.username,
+        password: dataForm.password,
       });
 
-      if (!response.ok) {
-        throw new Error("Gagal terhubung ke server database.");
+      if (authError) {
+        throw new Error("Email atau Password salah! Periksa kembali data Anda.");
       }
 
-      const data = await response.json();
+      // ✅ STEP 2: Ambil profil & role dari tabel user_profile berdasarkan email
+      // Setelah signInWithPassword berhasil, RLS akan mengizinkan akses karena auth.email() = email
+      const { data: profileData, error: profileError } = await supabase
+        .from('user_profile')
+        .select('*')
+        .eq('email', dataForm.username)
+        .maybeSingle();
 
-      // Cek apakah data user ditemukan
-      if (data && data.length > 0) {
-        const user = data[0];
-        
-        // Buat fake response mirip seperti sebelumnya agar tidak merusak komponen lain yang bergantung pada format ini
-        const fakeResponse = {
-          accessToken: "supabase-session-" + user.id,
-          username: user.username,
-          firstName: user.username, // Gunakan username sebagai nama panggilan
-          role: user.role || "admin",
-          image: "https://robohash.org/set_set4/user.png"
-        };
+      if (profileError) {
+        console.error("Profile error:", profileError);
+        throw new Error("Gagal mengambil data profil: " + profileError.message);
+      }
 
-        // Simpan data login ke localStorage
-        localStorage.setItem("token", fakeResponse.accessToken);
-        localStorage.setItem("user", JSON.stringify(fakeResponse));
-        
-        // Simpan raw data user jika ada fitur yang butuh loggedUser khusus
-        localStorage.setItem("loggedUser", JSON.stringify(user));
+      if (!profileData) {
+        throw new Error("Profil pengguna tidak ditemukan di database. Pastikan Anda sudah mendaftar.");
+      }
 
-        setTimeout(() => {
-          setLoading(false);
+      // ✅ STEP 3: Simpan sesi ke localStorage
+      const userRole = profileData.role || 'user';
+
+      const sessionData = {
+        accessToken: authData.session.access_token,
+        username: profileData.username,
+        firstName: profileData.username,
+        role: userRole,
+        image: "https://robohash.org/set_set4/user.png"
+      };
+
+      localStorage.setItem("token", sessionData.accessToken);
+      localStorage.setItem("user", JSON.stringify(sessionData));
+      localStorage.setItem("loggedUser", JSON.stringify(profileData));
+
+      // ✅ STEP 4: Redirect berdasarkan Role dari Supabase
+      setTimeout(() => {
+        setLoading(false);
+        if (userRole === 'admin') {
+          // 🔴 Admin → Dashboard Admin
           navigate('/admin');
-        }, 1000); 
+        } else {
+          // 🟢 Member / User → Dashboard Customer (Member Area)
+          navigate('/customer/dashboard');
+        }
+      }, 1000);
 
-      } else {
-        setTimeout(() => {
-          setLoading(false);
-          setError("Email atau Password salah! Periksa kembali data Anda.");
-        }, 800);
-      }
 
     } catch (err) {
       setTimeout(() => {
@@ -136,6 +141,19 @@ export default function Login() {
                 <span>{item}</span>
               </div>
             ))}
+          </div>
+
+          {/* Role Guide Info */}
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2">
+            <p className="text-xs font-bold text-[#D4E34A] uppercase tracking-wider mb-2">Panduan Login Berdasarkan Role</p>
+            <div className="flex items-center gap-3 text-xs text-white/70">
+              <span className="w-2 h-2 rounded-full bg-red-400 shrink-0"></span>
+              <span><strong className="text-white">Admin:</strong> Diarahkan ke Dashboard Admin</span>
+            </div>
+            <div className="flex items-center gap-3 text-xs text-white/70">
+              <span className="w-2 h-2 rounded-full bg-green-400 shrink-0"></span>
+              <span><strong className="text-white">Member / User:</strong> Diarahkan ke Area Member</span>
+            </div>
           </div>
         </div>
       </div>
@@ -239,7 +257,10 @@ export default function Login() {
               style={{ backgroundColor: '#D4E34A', color: '#1A1C1E' }}
             >
               {loading ? (
-                <ImSpinner2 className="animate-spin text-xl" />
+                <div className="flex items-center gap-2">
+                  <ImSpinner2 className="animate-spin text-xl" />
+                  <span>Memverifikasi...</span>
+                </div>
               ) : (
                 "Masuk Melalui Email"
               )}

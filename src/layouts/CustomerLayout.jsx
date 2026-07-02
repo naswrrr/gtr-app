@@ -22,7 +22,7 @@ export default function CustomerLayout() {
 
   // Protect customer routes
   if (isCustomerArea && !isLoginPage && !isCustomerLoggedIn) {
-    return <Navigate to="/customer/login" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   const navLinks = [
@@ -198,7 +198,7 @@ export default function CustomerLayout() {
               </>
             ) : (
               <Link
-                to="/customer/login"
+                to="/login"
                 className="bg-slate-950 text-white font-bold px-5 py-2.5 rounded-xl text-xs hover:bg-slate-900 transition-all shadow-md"
               >
                 Masuk Member
@@ -264,7 +264,7 @@ export default function CustomerLayout() {
                 </>
               ) : (
                 <Link
-                  to="/customer/login"
+                  to="/login"
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-sm font-bold text-white bg-slate-950 py-2.5 px-4 rounded-xl text-center shadow-sm block"
                 >
