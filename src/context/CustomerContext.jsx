@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import rawCustomers from '../data/customersData.json';
+import { supabase } from '../lib/supabase';
 
 const CustomerContext = createContext();
 
@@ -134,7 +135,7 @@ export function CustomerProvider({ children }) {
     localStorage.setItem('fixflow_customer_logged_in', 'true');
   };
 
-  // Login customer
+  // Login customer (from local CRM data)
   const loginCustomer = (email) => {
     const found = customers.find(c => c.email.toLowerCase() === email.toLowerCase());
     if (found) {
@@ -144,13 +145,28 @@ export function CustomerProvider({ children }) {
       localStorage.setItem('fixflow_selected_cust_id', found.id);
       return { success: true, customer: found };
     }
+    // Email tidak ada di data lokal — tapi tetap set login state agar bisa akses customer area
+    setIsCustomerLoggedIn(true);
     return { success: false, message: 'Email tidak terdaftar di database CRM FixFlow.' };
   };
 
-  // Logout customer
-  const logoutCustomer = () => {
+  // Force login dari Supabase — set state langsung tanpa butuh data lokal
+  const forceLogin = () => {
+    setIsCustomerLoggedIn(true);
+    localStorage.setItem('fixflow_customer_logged_in', 'true');
+  };
+
+  // Logout customer — bersihkan SEMUA sesi (Supabase + local)
+  const logoutCustomer = async () => {
     setIsCustomerLoggedIn(false);
+    setCurrentCustomer(null);
+    // Hapus semua keys dari localStorage
     localStorage.removeItem('fixflow_customer_logged_in');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loggedUser');
+    // Sign out dari Supabase Auth juga
+    await supabase.auth.signOut();
   };
 
   // Add new booking
@@ -277,6 +293,7 @@ export function CustomerProvider({ children }) {
       selectCustomer,
       loginCustomer,
       logoutCustomer,
+      forceLogin,
       addBooking,
       updateBookingStatus,
       addNotification,

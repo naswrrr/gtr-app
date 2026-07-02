@@ -44,6 +44,7 @@ export default function Register() {
     setIsSubmitting(true);
 
     try {
+      // STEP 1: Daftar via Supabase Auth
       const { data, error: signUpError } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
@@ -57,17 +58,50 @@ export default function Register() {
       });
 
       if (signUpError) {
-        throw new Error(signUpError.message || "Gagal melakukan pendaftaran ke database.");
+        throw new Error(signUpError.message || "Gagal melakukan pendaftaran.");
       }
 
+      if (!data.user) {
+        throw new Error("Pendaftaran gagal, coba ulangi.");
+      }
+
+      // STEP 2: Cek apakah profil sudah ada (kalau trigger jalan duluan)
+      const { data: existingProfile } = await supabase
+        .from('user_profile')
+        .select('id')
+        .eq('email', formData.email)
+        .maybeSingle();
+
+      // STEP 3: Jika profil belum ada, buat manual (tidak bergantung trigger)
+      if (!existingProfile) {
+        const { error: insertError } = await supabase
+          .from('user_profile')
+          .insert({
+            email: formData.email,
+            username: formData.name,
+            NoHp: formData.phone,
+            role: 'user',
+            password: 'hidden_by_supabase', // Password asli sudah aman di auth.users
+            auth_id: data.user.id,
+          });
+
+        if (insertError) {
+          // Tidak fatal — profil mungkin sudah dibuat oleh trigger
+          console.warn('Insert user_profile warning:', insertError.message);
+        }
+      }
+
+      // Berhasil!
       alert('Pendaftaran Berhasil! Silakan Login.');
       navigate('/login');
+
     } catch (err) {
       setError(err.message || 'Gagal terhubung ke server.');
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   const inputClassName =
     'w-full rounded-2xl border border-gray-200 bg-white py-3 px-4 pl-11 text-sm text-gray-700 shadow-sm outline-none transition-all duration-200 placeholder:text-gray-400 focus:border-transparent focus:ring-2 focus:ring-[#D4E34A]';

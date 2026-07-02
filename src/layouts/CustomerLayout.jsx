@@ -21,7 +21,9 @@ export default function CustomerLayout() {
   const isLoginPage = location.pathname === '/customer/login';
 
   // Protect customer routes
-  if (isCustomerArea && !isLoginPage && !isCustomerLoggedIn) {
+  // Cek React state DAN localStorage sebagai fallback (untuk menghindari race condition)
+  const isActuallyLoggedIn = isCustomerLoggedIn || localStorage.getItem('fixflow_customer_logged_in') === 'true';
+  if (isCustomerArea && !isLoginPage && !isActuallyLoggedIn) {
     return <Navigate to="/login" replace />;
   }
 

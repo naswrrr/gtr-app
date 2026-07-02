@@ -4,9 +4,11 @@ import { BsFillExclamationDiamondFill } from "react-icons/bs";
 import { ImSpinner2 } from "react-icons/im";
 import { Wrench, CheckCircle2, Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { supabase } from '../../lib/supabase';
+import { useCustomer } from '../../context/CustomerContext';
 
 export default function Login() {
   const navigate = useNavigate();
+  const { forceLogin } = useCustomer();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -44,7 +46,14 @@ export default function Login() {
       });
 
       if (authError) {
-        throw new Error("Email atau Password salah! Periksa kembali data Anda.");
+        // Deteksi jenis error dari Supabase
+        if (authError.message.includes('Email not confirmed')) {
+          throw new Error("Email Anda belum dikonfirmasi. Silakan cek inbox email Anda dan klik link konfirmasi, atau nonaktifkan konfirmasi email di Supabase Dashboard → Authentication → Providers → Email.");
+        }
+        if (authError.message.includes('Invalid login credentials')) {
+          throw new Error("Email atau Password salah! Periksa kembali data Anda.");
+        }
+        throw new Error(authError.message || "Login gagal. Coba lagi.");
       }
 
       // ✅ STEP 2: Ambil profil & role dari tabel user_profile berdasarkan email
@@ -78,6 +87,12 @@ export default function Login() {
       localStorage.setItem("token", sessionData.accessToken);
       localStorage.setItem("user", JSON.stringify(sessionData));
       localStorage.setItem("loggedUser", JSON.stringify(profileData));
+
+      // ✅ KUNCI: Langsung set React state isCustomerLoggedIn = true
+      // agar CustomerLayout route guard langsung mengenali sesi ini
+      if (userRole !== 'admin') {
+        forceLogin(); // Update React state + localStorage sekaligus
+      }
 
       // ✅ STEP 4: Redirect berdasarkan Role dari Supabase
       setTimeout(() => {
