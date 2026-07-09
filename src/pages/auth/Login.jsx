@@ -13,7 +13,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [dataForm, setDataForm] = useState({
-    username: "", 
+    username: "",
     password: "",
   });
 
@@ -25,12 +25,19 @@ export default function Login() {
     });
   };
 
-  // 💡 FITUR AUTO-FILL UNTUK DEMO DOSEN
-  const handleQuickLogin = () => {
-    setDataForm({
-      username: "admin@fixflow.com",
-      password: "password123"
-    });
+  // 💡 FITUR AUTO-FILL UNTUK DEMO DOSEN (MULTI-ROLE)
+  const handleQuickLogin = (role) => {
+    if (role === 'admin') {
+      setDataForm({
+        username: "wa@gmail.com",
+        password: "12345678"
+      });
+    } else if (role === 'member') {
+      setDataForm({
+        username: "user@gmail.com",
+        password: "12345678"
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -39,16 +46,14 @@ export default function Login() {
     setError("");
 
     try {
-      // ✅ STEP 1: Autentikasi via Supabase Native Auth
       const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
         email: dataForm.username,
         password: dataForm.password,
       });
 
       if (authError) {
-        // Deteksi jenis error dari Supabase
         if (authError.message.includes('Email not confirmed')) {
-          throw new Error("Email Anda belum dikonfirmasi. Silakan cek inbox email Anda dan klik link konfirmasi, atau nonaktifkan konfirmasi email di Supabase Dashboard → Authentication → Providers → Email.");
+          throw new Error("Email Anda belum dikonfirmasi. Silakan cek inbox email Anda.");
         }
         if (authError.message.includes('Invalid login credentials')) {
           throw new Error("Email atau Password salah! Periksa kembali data Anda.");
@@ -56,8 +61,6 @@ export default function Login() {
         throw new Error(authError.message || "Login gagal. Coba lagi.");
       }
 
-      // ✅ STEP 2: Ambil profil & role dari tabel user_profile berdasarkan email
-      // Setelah signInWithPassword berhasil, RLS akan mengizinkan akses karena auth.email() = email
       const { data: profileData, error: profileError } = await supabase
         .from('user_profile')
         .select('*')
@@ -65,15 +68,13 @@ export default function Login() {
         .maybeSingle();
 
       if (profileError) {
-        console.error("Profile error:", profileError);
         throw new Error("Gagal mengambil data profil: " + profileError.message);
       }
 
       if (!profileData) {
-        throw new Error("Profil pengguna tidak ditemukan di database. Pastikan Anda sudah mendaftar.");
+        throw new Error("Profil pengguna tidak ditemukan di database.");
       }
 
-      // ✅ STEP 3: Simpan sesi ke localStorage
       const userRole = profileData.role || 'user';
 
       const sessionData = {
@@ -88,24 +89,18 @@ export default function Login() {
       localStorage.setItem("user", JSON.stringify(sessionData));
       localStorage.setItem("loggedUser", JSON.stringify(profileData));
 
-      // ✅ KUNCI: Langsung set React state isCustomerLoggedIn = true
-      // agar CustomerLayout route guard langsung mengenali sesi ini
       if (userRole !== 'admin') {
-        forceLogin(); // Update React state + localStorage sekaligus
+        forceLogin();
       }
 
-      // ✅ STEP 4: Redirect berdasarkan Role dari Supabase
       setTimeout(() => {
         setLoading(false);
         if (userRole === 'admin') {
-          // 🔴 Admin → Dashboard Admin
           navigate('/admin');
         } else {
-          // 🟢 Member / User → Dashboard Customer (Member Area)
           navigate('/customer/dashboard');
         }
       }, 1000);
-
 
     } catch (err) {
       setTimeout(() => {
@@ -120,7 +115,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-gray-50 lg:flex">
-      
+
       {/* KIRI: Sisi Informasi & Branding */}
       <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-8 py-10 text-white lg:sticky lg:top-0 lg:w-5/12 lg:px-12 lg:py-16" style={{ backgroundColor: '#1A1C1E' }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,227,74,0.2),transparent_35%)]" />
@@ -158,7 +153,6 @@ export default function Login() {
             ))}
           </div>
 
-          {/* Role Guide Info */}
           <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2">
             <p className="text-xs font-bold text-[#D4E34A] uppercase tracking-wider mb-2">Panduan Login Berdasarkan Role</p>
             <div className="flex items-center gap-3 text-xs text-white/70">
@@ -205,7 +199,7 @@ export default function Login() {
                   value={dataForm.username}
                   onChange={handleChange}
                   className={inputClassName}
-                  placeholder="admin@fixflow.com"
+                  placeholder="contoh@email.com"
                 />
               </div>
             </div>
@@ -234,25 +228,46 @@ export default function Login() {
               </div>
             </div>
 
-            {/* 💡 MINI BANNER AKUN QUICK FILL */}
-            <div className="p-3.5 rounded-2xl bg-gray-50 border border-gray-100 flex justify-between items-center shadow-inner">
+            {/* 💡 MINI BANNER AKUN QUICK FILL BARU */}
+            <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100 space-y-3 shadow-inner">
               <div className="text-[11px] text-gray-500 font-medium leading-relaxed">
-                <p className="font-bold flex items-center gap-1" style={{ color: '#A8B330' }}>💡 Akun Demo Default:</p>
-                <p>Email: <span className="font-semibold text-gray-700">admin@fixflow.com</span></p>
-                <p>Pass: <span className="font-semibold text-gray-700">password123</span></p>
+                <p className="font-bold flex items-center gap-1 mb-1" style={{ color: '#A8B330' }}>
+                  💡 Pilihan Akun Demo (Quick Login):
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-slate-600">
+                  <div>
+                    <p className="font-bold text-red-600">🔴 Akun Admin:</p>
+                    <p>Email: <span className="font-semibold text-gray-700">wa@gmail.com</span></p>
+                    <p>Pass: <span className="font-semibold text-gray-700">12345678</span></p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-green-600">🟢 Akun Member:</p>
+                    <p>Email: <span className="font-semibold text-gray-700">user@gmail.com</span></p>
+                    <p>Pass: <span className="font-semibold text-gray-700">12345678</span></p>
+                  </div>
+                </div>
               </div>
-              <button 
-                type="button" 
-                onClick={handleQuickLogin}
-                className="text-xs px-3 py-1.5 rounded-xl font-bold hover:bg-black transition-all shadow-md active:scale-95"
-                style={{ backgroundColor: '#1A1C1E', color: '#fff' }}
-              >
-                ⚡ Auto Fill
-              </button>
+
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <button
+                  type="button"
+                  onClick={() => handleQuickLogin('admin')}
+                  className="text-xs px-3 py-2 rounded-xl font-bold text-white bg-red-600 hover:bg-red-700 transition-all shadow-sm active:scale-95"
+                >
+                  ⚡ Demo Admin
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleQuickLogin('member')}
+                  className="text-xs px-3 py-2 rounded-xl font-bold text-white bg-green-600 hover:bg-green-700 transition-all shadow-sm active:scale-95"
+                >
+                  ⚡ Demo Member
+                </button>
+              </div>
             </div>
 
             <div className="flex items-center justify-between text-sm pt-1">
-              <label className="flex items-center gap-2.5 cursor-pointer font-medium selection:bg-transparent" style={{ color: '#1A1C1E' }}>
+              <label className="flex items-center gap-2.5 cursor-pointer font-medium" style={{ color: '#1A1C1E' }}>
                 <input
                   type="checkbox"
                   className="accent-[#D4E34A] w-4 h-4 rounded border-gray-300 focus:ring-0"
@@ -264,7 +279,6 @@ export default function Login() {
               </Link>
             </div>
 
-            {/* Tombol Login */}
             <button
               disabled={loading}
               type="submit"
@@ -281,7 +295,6 @@ export default function Login() {
               )}
             </button>
 
-            {/* Pembatas Or */}
             <div className="relative py-2 flex items-center">
               <div className="grow border-t border-gray-100"></div>
               <span className="px-4 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
@@ -290,7 +303,6 @@ export default function Login() {
               <div className="grow border-t border-gray-100"></div>
             </div>
 
-            {/* OAuth Buttons */}
             <div className="grid grid-cols-2 gap-4">
               <button
                 type="button"
