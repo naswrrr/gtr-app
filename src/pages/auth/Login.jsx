@@ -230,6 +230,9 @@ export default function Login() {
 
             {/* 💡 MINI BANNER AKUN QUICK FILL BARU */}
             <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100 space-y-3 shadow-inner">
+
+
+              
               <div className="text-[11px] text-gray-500 font-medium leading-relaxed">
                 <p className="font-bold flex items-center gap-1 mb-1" style={{ color: '#A8B330' }}>
                   💡 Pilihan Akun Demo (Quick Login):

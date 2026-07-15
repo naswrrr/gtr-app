@@ -15,8 +15,8 @@ const STATUS_CONFIG = {
   sedang_dikerjakan:  { label: 'Sedang Dikerjakan',   color: 'bg-amber-100 text-amber-700 border-amber-200' },
   menunggu_sparepart: { label: 'Menunggu Sparepart',  color: 'bg-orange-100 text-orange-700 border-orange-200' },
   quality_check:      { label: 'Quality Check',       color: 'bg-purple-100 text-purple-700 border-purple-200' },
-  selesai:            { label: 'Selesai',              color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
-  cancelled:          { label: 'Dibatalkan',           color: 'bg-red-100 text-red-700 border-red-200' },
+  selesai:            { label: 'Selesai',             color: 'bg-emerald-100 text-emerald-700 border-emerald-200' },
+  cancelled:          { label: 'Dibatalkan',          color: 'bg-red-100 text-red-700 border-red-200' },
 };
 
 function StatusBadge({ status }) {
@@ -52,7 +52,7 @@ export default function Booking() {
   const [cancellingId, setCancellingId] = useState(null);
 
   // ── Fetch services dari Supabase ─────────────────────────────────────────
-  const fetchServices = useCallback(async () => {
+  const fetchServices = useCallback(async () => { // fetch mengambil data layanan dari tabel 'services' di Supabase
     setServicesLoading(true);
     const { data, error } = await supabase
       .from('services')
@@ -88,7 +88,7 @@ export default function Booking() {
   }, []);
 
   // ── Init ─────────────────────────────────────────────────────────────────
-  useEffect(() => {
+  useEffect(() => { // ambil kendaraan default dari currentCustomer saat halaman dimuat
     if (currentCustomer) {
       const defaultVehicle = currentCustomer.vehicles?.[0] || currentCustomer.vehicle || '';
       setSelectedVehicle(defaultVehicle);
